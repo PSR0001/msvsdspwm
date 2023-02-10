@@ -26,3 +26,45 @@ ALIGN is an open source automatic layout generator for analog circuits.
 
 **Refer to [this repo](https://github.com/sanampudig/OpenFASoC/tree/main/AUXCELL) for sample examples**
 
+### Creating inverter schematic using xschem
+An initial schematic is made by placing components from the open_pdk library.
+
+The required changes to the properties of the device can be made here and will automatically reflect in the layout
+
+![xschem_inv](Resources/week0/xschem_inverter.png)<br /><br />
+Convert the schematic to a symbol
+
+![xschem_sym](Resources/week0/xschem_sym.png)<br /><br />
+Using the symbol, we can create an independent test bench to simulate the circuit
+
+![xshem_tb](Resources/week0/xschem_inverter_tb.png)<br /><br />
+
+### Creating and simulating testbench Schematic
+The circuit can be simulated in ngspice. *make sure to disable .subckt in the simulation tab for the netlist generated for the sim*
+![xschem_sim](Resources/week0/xschem_simulation.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
