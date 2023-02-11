@@ -156,10 +156,39 @@ X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p 
 | Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
 |----------|-----|-----|
 |Rise Time|0.41 ns|0.7512 ns|
-|Fall Time|47.01 ns|0.64318 ns|
+|Fall Time|0.4701 ns|0.64318 ns|
 |Cell Rise Delay|032 ns|0.28 ns|
 |Cell Fall Delay|0.43 ns|0.32 ns|
 
+## 4.d LVS Report
+The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
+```
+netgen -batch lvs inverter.spice inverter_tb.spice
+```
+Subcircuit pins:
+Circuit 1: inverter                        |Circuit 2: inverter                        
+-------------------------------------------|-------------------------------------------
+vout                                       |vout                                       
+vin                                        |vin                                        
+vss                                        |vss                                        
+vdd                                        |vdd                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes inverter and inverter are equivalent.
+
+Subcircuit summary:
+Circuit 1: inverter.spice                  |Circuit 2: inverter_tb.spice               
+-------------------------------------------|-------------------------------------------
+inverter (1)                               |inverter (1)                               
+vsrc (2)                                   |vsrc (2)                                   
+Number of devices: 3                       |Number of devices: 3                       
+Number of nets: 4                          |Number of nets: 4                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+Cells have no pins;  pin matching not needed.
+Device classes inverter.spice and inverter_tb.spice are equivalent.
+
+Final result: Circuits match uniquely.
 
 
 
