@@ -38,22 +38,10 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 
 ### Installing Requires Tools
 
-For the Entire work Ubuntu 20.04 is used . Installing Ubuntu20.04 on Windows install Oracle virtual box with Ubuntu 20.04 - RAM at least 4GB, hard-disk atleast 100GB.
+For the Entire work Ubuntu 20.04 is used . Installing Ubuntu20.04 on Windows install Oracle virtual box with Ubuntu 20.04 - RAM at least 4GB, hard-disk atleast 100GB. [more info](Installation/VM/README.md)
 
-To adequately utilize the open source skywater130 pdk and understand the design flow, we first require to install all the tools, which are
-- open_pdk
-- magic
-- ngspice
-- xschem
-- netgen
+All the Tools installation Guide [Here](Installation/Tools/README.md)
 
-**Refer to [chapter 0 of PV GitHub repo.](https://github.com/yathAg/Physical_Verification_SKY130A#Chapter-0---Getting-the-tools)**
-
-Install ALIGN tool
-
-ALIGN is an open source automatic layout generator for analog circuits.
-
-**Refer to [this repo](https://github.com/sanampudig/OpenFASoC/tree/main/AUXCELL) for sample examples**
 
 ### Creating inverter schematic using xschem
 An initial schematic is made by placing components from the open_pdk library.
