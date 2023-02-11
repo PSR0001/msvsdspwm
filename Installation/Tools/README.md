@@ -1,11 +1,11 @@
 ## Tools and SKY130 PDKs
-To adequately utilize the open source skywater130 pdk and understand the design flow, we first require to install all the tools, which are
+To adequately utilize the open source skywater130 pdk, we first require to install all the tools, which are
 - [magic](#magic)
 - [netgen](#netgen)
 - [xschem](#xschem)
 - [ngspice](#ngspice)
 - [open_pdk](#open_pdk)
-- [ALIGN Tools]()
+- [ALIGN Tools](#installing-align)
 
 ### Magic
 Magic is an open-source VLSI layout tool.<br /><br />
@@ -101,19 +101,31 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 
 Use the following commands to install ALIGN tool.
 
+For Faster Installation ALIGN
+```
+sudo apt update
+sudo apt install lp-solve
+sudo apt-get install libboost-all-dev
+```
+
 ```
 export CC=/usr/bin/gcc
 export CXX=/usr/bin/g++
+```
+```
+
 git clone https://github.com/ALIGN-analoglayout/ALIGN-public
 cd ALIGN-public
 #Create a Python virtualenv
 python -m venv general
 source general/bin/activate
 python -m pip install pip --upgrade
+
 # Install ALIGN as a USER
 pip install -v .
 # Install ALIGN as a DEVELOPER
 pip install -e .
+
 pip install setuptools wheel pybind11 scikit-build cmake ninja
 pip install -v -e .[test] --no-build-isolation
 pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
