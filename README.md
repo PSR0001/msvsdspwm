@@ -10,6 +10,15 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 
 ### Index
 - [Installing Requires Tools](#installing-requires-tools)
+    * [Oracle Virtual Box with Ubuntu 20.04](Installation/VM/README.md)
+    * [Tools and SKY130 PDKs](Installation/Tools/README.md)
+        + [Magic]()
+        + [Ngspice]()
+        + [Netgen]()
+        + [Xschem]()
+        + [Open_PDKs]()
+        + [ALIGN Tool]()
+        + [Verifying the open_pdk installation]()
 - [Creating inverter schematic using xschem](#creating-inverter-schematic-using-xschem)
     * [Pre-Layout Simulation](#pre-layout-simulation)
         + [Creating and simulating testbench Schematic](#creating-and-simulating-testbench-schematic)
