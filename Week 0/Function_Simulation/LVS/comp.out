@@ -1,0 +1,181 @@
+
+Subcircuit summary:
+Circuit 1: Fn_.spice                       |Circuit 2: Fn_prelayout.spice              
+-------------------------------------------|-------------------------------------------
+pmos (6)                                   |pmos (6)                                   
+nmos (6)                                   |nmos (6)                                   
+c (5)                                      |c (1) **Mismatch**                         
+vsrc (7)                                   |vsrc (7)                                   
+Number of devices: 24 **Mismatch**         |Number of devices: 20 **Mismatch**         
+Number of nets: 15 **Mismatch**            |Number of nets: 14 **Mismatch**            
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: Fn_.spice                       |Circuit 2: Fn_prelayout.spice              
+
+---------------------------------------------------------------------------------------
+Net: f                                     |Net: f                                     
+  pmos/gate = 1                            |  pmos/gate = 1                            
+  nmos/gate = 1                            |  nmos/gate = 1                            
+  vsrc/pos = 1                             |  vsrc/pos = 1                             
+                                           |                                           
+Net: a_30_9#                               |Net: c                                     
+  nmos/(drain|source) = 2                  |  pmos/gate = 1                            
+  c/top = 1                                |  nmos/gate = 1                            
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+Net: e                                     |Net: e                                     
+  pmos/gate = 1                            |  pmos/gate = 1                            
+  nmos/gate = 1                            |  nmos/gate = 1                            
+  vsrc/pos = 1                             |  vsrc/pos = 1                             
+                                           |                                           
+Net: a_22_38#                              |Net: b                                     
+  pmos/(drain|source) = 4                  |  pmos/gate = 1                            
+  c/top = 1                                |  nmos/gate = 1                            
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+Net: a_14_9#                               |Net: d                                     
+  nmos/(drain|source) = 4                  |  pmos/gate = 1                            
+  c/top = 1                                |  nmos/gate = 1                            
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+Net: vdd                                   |Net: vdd                                   
+  pmos/(drain|source) = 2                  |  pmos/(drain|source) = 2                  
+  pmos/bulk = 6                            |  pmos/bulk = 2                            
+  vsrc/pos = 1                             |  vsrc/pos = 1                             
+  c/top = 1                                |                                           
+                                           |                                           
+Net: out                                   |Net: out                                   
+  pmos/(drain|source) = 2                  |  pmos/(drain|source) = 2                  
+  nmos/(drain|source) = 3                  |  nmos/(drain|source) = 3                  
+  c/top = 1                                |  c/top = 1                                
+                                           |                                           
+Net: 0                                     |Net: a                                     
+  vsrc/neg = 7                             |  pmos/gate = 1                            
+                                           |  nmos/gate = 1                            
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+(no matching net)                          |Net: 4                                     
+                                           |  pmos/(drain|source) = 4                  
+                                           |  pmos/bulk = 2                            
+                                           |                                           
+(no matching net)                          |Net: 7                                     
+                                           |  nmos/(drain|source) = 2                  
+                                           |  nmos/bulk = 1                            
+                                           |                                           
+(no matching net)                          |Net: 6                                     
+                                           |  nmos/(drain|source) = 4                  
+                                           |  nmos/bulk = 2                            
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: gnd                                   |Net: 0                                     
+  nmos/bulk = 6                            |  nmos/bulk = 3                            
+  nmos/(drain|source) = 3                  |  nmos/(drain|source) = 3                  
+  c/bottom = 5                             |  c/bottom = 1                             
+                                           |  vsrc/neg = 7                             
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: a_14_38#                              |(no matching net)                          
+  pmos/(drain|source) = 2                  |                                           
+                                           |                                           
+Net: a_46_38#                              |(no matching net)                          
+  pmos/(drain|source) = 2                  |                                           
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: Fn_.spice                       |Circuit 2: Fn_prelayout.spice              
+
+---------------------------------------------------------------------------------------
+Instance: c:0                              |Instance: c:load                           
+  top = 3                                  |  top = 6                                  
+  bottom = 14                              |  bottom = 14                              
+                                           |                                           
+Instance: c:1                              |(no matching instance)                     
+  top = 5                                  |                                           
+  bottom = 14                              |                                           
+                                           |                                           
+Instance: c:2                              |(no matching instance)                     
+  top = 6                                  |                                           
+  bottom = 14                              |                                           
+                                           |                                           
+Instance: c:3                              |(no matching instance)                     
+  top = 5                                  |                                           
+  bottom = 14                              |                                           
+                                           |                                           
+Instance: c:4                              |(no matching instance)                     
+  top = 10                                 |                                           
+  bottom = 14                              |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: c:4                              |Instance: c:load                           
+  pos = 3                                  |  pos = 3                                  
+  neg = 7                                  |  neg = 14                                 
+                                           |                                           
+Instance: c:4                              |Instance: c:load                           
+  pos = 3                                  |  pos = 3                                  
+  neg = 7                                  |  neg = 14                                 
+                                           |                                           
+Instance: c:4                              |Instance: c:load                           
+  pos = 10                                 |  pos = 3                                  
+  neg = 7                                  |  neg = 14                                 
+                                           |                                           
+(no matching instance)                     |Instance: c:load                           
+                                           |  pos = 3                                  
+                                           |  neg = 14                                 
+                                           |                                           
+(no matching instance)                     |Instance: c:load                           
+                                           |  pos = 3                                  
+                                           |  neg = 14                                 
+                                           |                                           
+(no matching instance)                     |Instance: c:load                           
+                                           |  pos = 3                                  
+                                           |  neg = 14                                 
+                                           |                                           
+(no matching instance)                     |Instance: c:load                           
+                                           |  pos = 5                                  
+                                           |  neg = 14                                 
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: nmos:1008                        |Instance: nmos:9                           
+  (drain,source) = (6,3)                   |  (drain,source) = (6,3)                   
+  gate = 3                                 |  gate = 3                                 
+  bulk = 14                                |  bulk = 3                                 
+                                           |                                           
+(no matching instance)                     |Instance: nmos:8                           
+                                           |  (drain,source) = (6,6)                   
+                                           |  gate = 3                                 
+                                           |  bulk = 6                                 
+                                           |                                           
+                                           |                                           
+(no matching instance)                     |Instance: nmos:7                           
+                                           |  (drain,source) = (6,6)                   
+                                           |  gate = 3                                 
+                                           |  bulk = 6                                 
+                                           |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: nmos:1003                        |Instance: nmos:10                          
+  (drain,source) = (14,3)                  |  (drain,source) = (14,6)                  
+  gate = 3                                 |  gate = 3                                 
+  bulk = 14                                |  bulk = 14                                
+                                           |                                           
+(no matching instance)                     |Instance: nmos:11                          
+                                           |  (drain,source) = (14,6)                  
+                                           |  gate = 3                                 
+                                           |  bulk = 14                                
+                                           |                                           
+                                           |                                           
+(no matching instance)                     |Instance: nmos:12                          
+                                           |  (drain,source) = (14,3)                  
+                                           |  gate = 3                                 
+                                           |  bulk = 14                                
+                                           |                                           
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Cells have no pins;  pin matching not needed.
+Device classes Fn_.spice and Fn_prelayout.spice are equivalent.
+
+Final result: Netlists do not match.
