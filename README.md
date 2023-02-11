@@ -39,6 +39,8 @@ Using the symbol, we can create an independent test bench to simulate the circui
 
 ![xshem_inverter_tb](Resources/week0/xschem_inverter_tb.png)<br /><br />
 
+## Pre-Layout Simulation
+
 ### Creating and simulating testbench Schematic
 The circuit can be simulated in ngspice. 
 
@@ -99,7 +101,75 @@ Set the appropriate device properties and route the layout.
 ### Performing LVS checks on testbench and layout netlists
  -->
 
-### Inverter post-layout characterization using ALIGN
+## Post-Layout Simulation
+Inverter Layout Using Magic
+
+<img src="Resources/week0/layout_magic.png" height=800 alt="layout_magic">
+
+Extract Command from magic to ngspice
+```
+excract all
+ext2spice hierarchy on
+ext2spice scale off
+ext2spice 
+```
+Netlist From Magic
+```
+* SPICE3 file created from inverter.ext - technology: sky130A
+
+.subckt inverter vin vout vdd vss
+X0 vout vin vss vss sky130_fd_pr__nfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
+X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
+.ends
+```
+Modify The Netlist So that we can run the simulation using ngspice
+
+```
+* SPICE3 file created from inverter.ext - technology: sky130A
+*Added manually
+X1 in out net1 GND inverter
+V1 net1 GND 1.8
+.save i(v1)
+V2 in GND pulse(0 1.8 1n 1n 1n 4n 10n)
+.save i(v2)
+
+* Added manually
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1n 20n
+plot v(in) v(out)
+.endc
+
+*Magic generated Netlist
+.subckt inverter vin vout vdd vss
+X0 vout vin vss vss sky130_fd_pr__nfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
+X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
+.ends
+
+```
+<img src="Resources/week0/post_layout.png" alt="post_layout" >
+
+
+## Comparison of Pre-layout and Post-layout timing parameters for inverter.
+
+| Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
+|----------|-----|-----|
+|Rise Time|0.41 ns|0.7512 ns|
+|Fall Time|47.01 ns|0.64318 ns|
+|Cell Rise Delay|032 ns|0.28 ns|
+|Cell Fall Delay|0.43 ns|0.32 ns|
+
+
+
+
+
+
+
+
+
+
+### Inverter using ALIGN
 A simple SPICE Netlist for inverter is written to generate .lef and .gds files
 ```
 .subckt inverter vinn voutn vdd 0
@@ -124,42 +194,6 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/inverter -p ../pdks/SKY130_PDK/
 - ### .lef
 ![inverter_lef](Resources/week0/inverter_lef.png)
 <br><br>
-
-Inverter Layout Using Magic
-
-<img src="Resources/week0/layout_magic.png" height=500>
-
-Extract Command from magic to ngspice
-```
-excract all
-ext2spice hierarchy on
-ext2spice scale off
-ext2spice 
-```
-Netlist From Magic
-```
-* SPICE3 file created from inverter.ext - technology: sky130A
-
-.subckt inverter vin vout vdd vss
-X0 vout vin vss vss sky130_fd_pr__nfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
-X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
-.ends
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
