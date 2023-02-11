@@ -32,7 +32,7 @@ C {devices/lab_pin.sym} 30 -160 0 0 {name=p2 sig_type=std_logic lab=in
 }
 C {devices/lab_pin.sym} 300 -170 0 0 {name=p1 sig_type=std_logic lab=out
 }
-C {devices/code_shown.sym} 350 -90 0 0 {name=SPICE only_toplevel=true 
+C {devices/code_shown.sym} -130 50 0 0 {name=SPICE only_toplevel=true 
 value="
 .lib "~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice" tt
 .control
