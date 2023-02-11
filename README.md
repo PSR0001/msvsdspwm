@@ -3,9 +3,30 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 
 
 ## Index
-* [Week 0 Getting the tools]()
+* [Week 0](#week-0)
+* [Week 1](#week-1)
 
 ## Week 0
+
+### Index
+- [Installing Requires Tools](#installing-requires-tools)
+- [Creating inverter schematic using xschem](#creating-inverter-schematic-using-xschem)
+    * [Pre-Layout Simulation](#pre-layout-simulation)
+        + [Creating and simulating testbench Schematic](#creating-and-simulating-testbench-schematic)
+    * [Post-Layout Simulation](#post-layout-simulation)
+    * [Comparison of Pre-layout and Post-layout timing parameters for inverter](#comparison-of-pre-layout-and-post-layout-timing-parameters-for-inverter)
+    * [LVS Report](#lvs-report)
+- [Simulation of a function using Magic and Ngspice](#simulation-of-a-function-using-magic-and-ngspice)
+    * [Pre-layout Simulation](#pre-layout-simulation-of-function-fn-using-ngspice)
+    * [Post-layout Simulation](#post-layout-simulation-of-function-fn-using-magic-and-ngspice)
+    * [Comparison of results](#comparison-of-results)
+    * [LVS Report](#lvs-report-function)
+- [Inverter using ALIGN](#inverter-using-align)
+    * [.gds](#.gds)
+    * [.lef](#.lef)
+
+
+
 
 ### Installing Requires Tools
 
@@ -143,7 +164,7 @@ X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p 
 <img src="Resources/week0/post_layout.png" alt="post_layout" >
 
 
-## Comparison of Pre-layout and Post-layout timing parameters for inverter.
+### Comparison of Pre-layout and Post-layout timing parameters for inverter.
 
 | Parameter    | Value from Pre-layout Simulation| Value from Post-layout Simulation|
 |----------|-----|-----|
@@ -152,7 +173,7 @@ X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p 
 |Cell Rise Delay|032 ns|0.28 ns|
 |Cell Fall Delay|0.43 ns|0.32 ns|
 
-## 4.d LVS Report
+### LVS Report
 The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
 ```
 netgen -batch lvs inverter.spice inverter_tb.spice
@@ -187,7 +208,7 @@ Final result: Circuits match uniquely.
 <img src="Resources/week0/function.png" alt="function"  >
 
 
-## Pre-layout Simulation of function Fn using Ngspice
+### Pre-layout Simulation of function Fn using Ngspice
 The netlist ```fn_prelayout.spice``` for the function Fn given can be written as
 
 ```
@@ -238,7 +259,7 @@ Run the ngspice simulation using the following commands.
 
 <img src="Resources/week0/function_pre.png" alt="function_pre"  >
 
-## Post-layout Simulation of function Fn using Magic and Ngspice
+### Post-layout Simulation of function Fn using Magic and Ngspice
 
 <img src="Resources/week0/Fn_mag.png" alt="function"  ><br>
 
@@ -308,10 +329,10 @@ Run the ngspice simulation using the following commands.
 
 <img src="Resources/week0/function_post.png" alt="function_post"  >
 
-## Comparison of results
+### Comparison of results
 We can note that the graph of out vs time for both pre-layout simulation and post layout simulation are similar.
 
-## LVS Report
+### LVS Report Function
 The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
 
 ```
@@ -363,4 +384,4 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/inverter -p ../pdks/SKY130_PDK/
 
 
 
-
+## Week 1
