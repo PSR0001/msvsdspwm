@@ -45,6 +45,7 @@ Using the symbol, we can create an independent test bench to simulate the circui
 The circuit can be simulated in ngspice. 
 
 Netlist
+
 ```
 ** sch_path: /home/coold69/Documents/msvsdspwm/Week 0/xschem/inverter_tb.sch
 **.subckt inverter_tb
@@ -91,15 +92,6 @@ XM3 vout vin vdd VDD sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=3 ad='int((nf+1)/2) *
 
 ![xschem_sim](Resources/week0/xschem_simulation.png)
 
-<!-- ### Creating inverter layout in Magic and exporting its netlist
-The original schematic can be used to export a netlist, which can be imported into magic to create the layout. <br /><br />
-
-Set the appropriate device properties and route the layout.
-![mag_p1](Resources/Lab1/mag_p1.png)<br /><br /><br />
-![mag_p1](Resources/Lab1/mag_p1.png)<br /><br /><br />
-![mag_net](Resources/Lab1/mag_net.png)<br /><br /><br />
-### Performing LVS checks on testbench and layout netlists
- -->
 
 ## Post-Layout Simulation
 Inverter Layout Using Magic
@@ -191,6 +183,146 @@ Device classes inverter.spice and inverter_tb.spice are equivalent.
 Final result: Circuits match uniquely.
 
 
+## Simulation of a function using Magic and Ngspice
+<img src="Resources/week0/function.png" alt="function"  >
+
+
+## Pre-layout Simulation of function Fn using Ngspice
+The netlist ```fn_prelayout.spice``` for the function Fn given can be written as
+
+```
+***Netlist description for prelayout simulation***
+M1 3 a vdd vdd pmos W=2.125u L=0.25u
+M2 2 b vdd vdd pmos W=2.125u L=0.25u
+M3 4 d 2 2 pmos W=2.125u L=0.25u
+M4 4 c 3 3 pmos W=2.125u L=0.25u
+M5 out e 4 4 pmos W=2.125u L=0.25u
+M6 out f 4 4 pmos W=2.125u L=0.25u
+
+M7 out a 6 6 nmos W=2.125u L=0.25u
+M8 out c 6 6 nmos W=2.125u L=0.25u
+M9 out e 7 7 nmos W=2.125u L=0.25u
+M10 6 b 0 0 nmos W=2.125u L=0.25u
+M11 6 d 0 0 nmos W=2.125u L=0.25u
+M12 7 f 0 0 nmos W=2.125u L=0.25u
+
+cload out 0 10f
+
+Vdd vdd 0 2.5
+V1 a 0 0 pulse 0 2.5 0.1n 10p 10p 1n 2n
+V2 b 0 0 pulse 0 2.5 0.2n 10p 10p 1n 2n
+V3 c 0 0 pulse 0 2.5 0.3n 10p 10p 1n 2n
+V4 d 0 0 pulse 0 2.5 0.4n 10p 10p 1n 2n
+V5 e 0 0 pulse 0 2.5 0.5n 10p 10p 1n 2n
+V6 f 0 0 pulse 0 2.5 0.6n 10p 10p 1n 2n
+
+***Simulation commands***
+.op
+.tran 10p 4n
+
+*** .include model file ***
+.include my_model_file.mod
+.end
+
+```
+
+Run the ngspice simulation using the following commands.
+```
+    $ngspice fn_prelayout.spice
+```
+```
+    ngspice 2 -> run
+    ngspice 3 -> plot out
+```
+
+
+<img src="Resources/week0/function_pre.png" alt="function_pre"  >
+
+## Post-layout Simulation of function Fn using Magic and Ngspice
+
+<img src="Resources/week0/Fn_mag.png" alt="function"  ><br>
+
+The netlist fn_postlayout.spice generated is as shown. The netlist shows the parasitic capacitances also. Model file is same as the one used for pre-layout simulation.
+
+```
+* SPICE3 file created from Fn_.ext - technology: min2
+
+.option scale=0.09u
+
+M1000 a_46_38# d a_22_38# vdd pmos w=17 l=2
++  ad=102 pd=46 as=204 ps=92
+M1001 out c a_14_9# gnd nmos w=17 l=2
++  ad=204 pd=92 as=204 ps=92
+M1002 vdd b a_46_38# vdd pmos w=17 l=2
++  ad=204 pd=92 as=0 ps=0
+M1003 gnd f a_30_9# gnd nmos w=17 l=2
++  ad=204 pd=92 as=102 ps=46
+M1004 gnd b a_14_9# gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 out e a_22_38# vdd pmos w=17 l=2
++  ad=102 pd=46 as=0 ps=0
+M1006 a_14_38# a vdd vdd pmos w=17 l=2
++  ad=102 pd=46 as=0 ps=0
+M1007 a_14_9# a out gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 a_30_9# e out gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_22_38# f out vdd pmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 a_22_38# c a_14_38# vdd pmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 a_14_9# d gnd gnd nmos w=17 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a_30_9# gnd 3.37fF
+C1 a_14_9# gnd 6.82fF
+C2 out gnd 8.40fF
+C3 a_22_38# gnd 3.02fF
+C4 vdd gnd 9.58fF
+
+
+Vdd vdd 0 2.5
+V1 a 0 0 pulse 0 2.5 0.1n 10p 10p 1n 2n
+V2 b 0 0 pulse 0 2.5 0.2n 10p 10p 1n 2n
+V3 c 0 0 pulse 0 2.5 0.3n 10p 10p 1n 2n
+V4 d 0 0 pulse 0 2.5 0.4n 10p 10p 1n 2n
+V5 e 0 0 pulse 0 2.5 0.5n 10p 10p 1n 2n
+V6 f 0 0 pulse 0 2.5 0.6n 10p 10p 1n 2n
+***Simulation commands***
+.op
+.tran 10p 4n
+*** .include model file ***
+.include  model.mod
+.end
+
+```
+
+Run the ngspice simulation using the following commands.
+
+```
+    ngspice Fn_.spice
+```
+```
+    ngspice 2 -> run
+    ngspice 3 -> plot out
+```
+
+<img src="Resources/week0/function_post.png" alt="function_post"  >
+
+## Comparison of results
+We can note that the graph of out vs time for both pre-layout simulation and post layout simulation are similar.
+
+## LVS Report
+The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
+
+```
+netgen -batch lvs Fn_.spice Fn_prelayout.spice 
+```
+
+Netlists do not match.
+Cells have no pins;  pin matching not needed.
+Device classes Fn_.spice and Fn_prelayout.spice are equivalent.
+
+Final result: Netlists do not match.
 
 
 
@@ -198,7 +330,12 @@ Final result: Circuits match uniquely.
 
 
 
-### Inverter using ALIGN
+
+
+
+
+
+## Inverter using ALIGN
 A simple SPICE Netlist for inverter is written to generate .lef and .gds files
 ```
 .subckt inverter vinn voutn vdd 0
