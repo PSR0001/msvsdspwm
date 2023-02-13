@@ -40,7 +40,7 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 
 For the Entire work Ubuntu 20.04 is used . Installing Ubuntu20.04 on Windows install Oracle virtual box with Ubuntu 20.04 - RAM at least 4GB, hard-disk atleast 100GB. [more info](Installation/VM/README.md)
 
-All the Tools installation Guide [Here](Installation/Tools/README.md)
+AI Tools installation Guide [Here](Installation/Tools/README.md)
 
 
 ### Creating inverter schematic using xschem
@@ -198,6 +198,112 @@ Cells have no pins;  pin matching not needed.
 Device classes inverter.spice and inverter_tb.spice are equivalent.
 
 Final result: Circuits match uniquely.
+
+
+
+## Circuit Simulation From Spice 
+
+### Pre-layout Circuit 
+<img src="Resources/week0/inverter_sch_2.png">
+<br>
+
+#### Netlist
+
+```
+
+XPMOS Vout Vin VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XNMOS Vout Vin GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+
+
+Vin Vin GND pulse(0 1.8 0.5ns 0.5ns 0.5ns 5ns 10ns)
+.save i(vin)
+VDD VDD GND 1.8
+.save i(vdd)
+**** begin user architecture code
+
+.tran 0.01n 20n
+.control
+run
+plot Vin Vout
+.save all
+.endc
+.end
+
+
+.lib /home/coold69/open_pdks/sky130/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+.save all
+
+
+**** end user architecture code
+**.ends
+.end
+```
+#### Simulation
+<img src="Resources/week0/inverter_sch_spice_2.png" alt="">
+<br>
+
+### Post Layout 
+
+<img src="Resources/week0/inverter_post_layout.png">
+
+#### Netlist
+This inverter.spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+
+```
+* NGSPICE file created from inverter.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_XGS3BL a_n73_n100# a_15_n100# w_n211_n319# a_n33_n197#
++ VSUBS
+X0 a_15_n100# a_n33_n197# a_n73_n100# w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
+C0 w_n211_n319# a_n73_n100# 0.09fF
+C1 a_n33_n197# w_n211_n319# 0.26fF
+C2 a_15_n100# a_n73_n100# 0.16fF
+C3 a_n33_n197# a_15_n100# 0.03fF
+C4 w_n211_n319# a_15_n100# 0.06fF
+C5 a_n33_n197# a_n73_n100# 0.03fF
+C6 a_15_n100# VSUBS 0.02fF
+C7 a_n73_n100# VSUBS 0.02fF
+C8 a_n33_n197# VSUBS 0.05fF
+C9 w_n211_n319# VSUBS 1.07fF
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_648S5X a_n73_n100# a_n33_n188# a_15_n100# a_n175_n274#
+X0 a_15_n100# a_n33_n188# a_n73_n100# a_n175_n274# sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
+C0 a_n33_n188# a_15_n100# 0.03fF
+C1 a_n73_n100# a_n33_n188# 0.03fF
+C2 a_n73_n100# a_15_n100# 0.16fF
+C3 a_15_n100# a_n175_n274# 0.08fF
+C4 a_n73_n100# a_n175_n274# 0.11fF
+C5 a_n33_n188# a_n175_n274# 0.30fF
+.ends
+
+.subckt inverter vin gnd vout vdd
+XXPMOS vdd vout XPMOS/w_n211_n319# vin VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXNMOS gnd vin vout VSUBS sky130_fd_pr__nfet_01v8_648S5X
+C0 XPMOS/w_n211_n319# vdd 0.19fF
+C1 vout vdd 0.01fF
+C2 vin XPMOS/w_n211_n319# 0.08fF
+C3 vin vout 0.05fF
+C4 vout XPMOS/w_n211_n319# 0.13fF
+C5 vin gnd 0.10fF
+C6 vout gnd 0.01fF
+C7 vin vdd 0.10fF
+C8 vin VSUBS 0.38fF
+C9 vout VSUBS 0.23fF
+C10 gnd VSUBS 0.28fF
+C11 vdd VSUBS 0.02fF
+C12 XPMOS/w_n211_n319# VSUBS 1.11fF
+.ends
+
+```
+
+
+
 
 
 ## Simulation of a function using Magic and Ngspice
