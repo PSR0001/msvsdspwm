@@ -124,12 +124,16 @@ ext2spice
 ```
 Netlist From Magic
 ```
-* SPICE3 file created from inverter.ext - technology: sky130A
+* NGSPICE file created from inverter.ext - technology: sky130A
 
 .subckt inverter vin vout vdd vss
 X0 vout vin vss vss sky130_fd_pr__nfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
 X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
+C0 vdd vout 0.16fF
+C1 vout vin 0.04fF
+C2 vdd vin 0.08fF
 .ends
+
 ```
 Modify The Netlist So that we can run the simulation using ngspice
 
