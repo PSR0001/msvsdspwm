@@ -24,6 +24,11 @@ This repository contains the documentation of the work done during a 10 Weeks VS
     * [Post-Layout Simulation](#post-layout-simulation)
     * [Comparison of Pre-layout and Post-layout timing parameters for inverter](#comparison-of-pre-layout-and-post-layout-timing-parameters-for-inverter)
     * [LVS Report](#lvs-report)
+-[Circuit Simulation From Spice ](#circuit-simulation-from-spice)
+    * [Pre-layout Circuit ](#pre-layout-circuit)
+    * [Post Layout ](#post-layout)
+    * [LVS Report](#lvs-report-spice-netlist-magic)
+
 - [Simulation of a function using Magic and Ngspice](#simulation-of-a-function-using-magic-and-ngspice)
     * [Pre-layout Simulation](#pre-layout-simulation-of-function-fn-using-ngspice)
     * [Post-layout Simulation](#post-layout-simulation-of-function-fn-using-magic-and-ngspice)
