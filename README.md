@@ -24,7 +24,8 @@ This repository contains the documentation of the work done during a 10 Weeks VS
     * [Post-Layout Simulation](#post-layout-simulation)
     * [Comparison of Pre-layout and Post-layout timing parameters for inverter](#comparison-of-pre-layout-and-post-layout-timing-parameters-for-inverter)
     * [LVS Report](#lvs-report)
--[Circuit Simulation From Spice ](#circuit-simulation-from-spice)
+    
+- [Circuit Simulation From Spice ](#circuit-simulation-from-spice)
     * [Pre-layout Circuit ](#pre-layout-circuit)
     * [Post Layout ](#post-layout)
     * [LVS Report](#lvs-report-spice-netlist-magic)
