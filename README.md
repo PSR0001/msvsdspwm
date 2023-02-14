@@ -253,7 +253,7 @@ plot Vin Vout
 
 ### Post Layout 
 
-<img src="Resources/week0/inverter_post_layout.png">
+<img src="Resources/week0/post_layout_sky130_magic.png" alt="post_layout_sky130_magic">
 
 #### Netlist
 This inverter.spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
@@ -264,12 +264,12 @@ This inverter.spice netlist generated post layout contains the parasitics that w
 .subckt sky130_fd_pr__pfet_01v8_XGS3BL a_n73_n100# a_15_n100# w_n211_n319# a_n33_n197#
 + VSUBS
 X0 a_15_n100# a_n33_n197# a_n73_n100# w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
-C0 w_n211_n319# a_n73_n100# 0.09fF
-C1 a_n33_n197# w_n211_n319# 0.26fF
-C2 a_15_n100# a_n73_n100# 0.16fF
-C3 a_n33_n197# a_15_n100# 0.03fF
-C4 w_n211_n319# a_15_n100# 0.06fF
-C5 a_n33_n197# a_n73_n100# 0.03fF
+C0 a_15_n100# a_n73_n100# 0.16fF
+C1 w_n211_n319# a_n33_n197# 0.26fF
+C2 a_15_n100# a_n33_n197# 0.03fF
+C3 a_15_n100# w_n211_n319# 0.06fF
+C4 a_n73_n100# a_n33_n197# 0.03fF
+C5 w_n211_n319# a_n73_n100# 0.09fF
 C6 a_15_n100# VSUBS 0.02fF
 C7 a_n73_n100# VSUBS 0.02fF
 C8 a_n33_n197# VSUBS 0.05fF
@@ -278,36 +278,76 @@ C9 w_n211_n319# VSUBS 1.07fF
 
 .subckt sky130_fd_pr__nfet_01v8_648S5X a_n73_n100# a_n33_n188# a_15_n100# a_n175_n274#
 X0 a_15_n100# a_n33_n188# a_n73_n100# a_n175_n274# sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
-C0 a_n33_n188# a_15_n100# 0.03fF
-C1 a_n73_n100# a_n33_n188# 0.03fF
-C2 a_n73_n100# a_15_n100# 0.16fF
+C0 a_n33_n188# a_n73_n100# 0.03fF
+C1 a_15_n100# a_n73_n100# 0.16fF
+C2 a_n33_n188# a_15_n100# 0.03fF
 C3 a_15_n100# a_n175_n274# 0.08fF
 C4 a_n73_n100# a_n175_n274# 0.11fF
 C5 a_n33_n188# a_n175_n274# 0.30fF
 .ends
 
-.subckt inverter vin gnd vout vdd
-XXPMOS vdd vout XPMOS/w_n211_n319# vin VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
-XXNMOS gnd vin vout VSUBS sky130_fd_pr__nfet_01v8_648S5X
-C0 XPMOS/w_n211_n319# vdd 0.19fF
-C1 vout vdd 0.01fF
-C2 vin XPMOS/w_n211_n319# 0.08fF
-C3 vin vout 0.05fF
-C4 vout XPMOS/w_n211_n319# 0.13fF
-C5 vin gnd 0.10fF
-C6 vout gnd 0.01fF
-C7 vin vdd 0.10fF
-C8 vin VSUBS 0.38fF
-C9 vout VSUBS 0.23fF
-C10 gnd VSUBS 0.28fF
-C11 vdd VSUBS 0.02fF
-C12 XPMOS/w_n211_n319# VSUBS 1.11fF
+.subckt inverter in out VP VN
+XXM1 VP out XM1/w_n211_n319# in VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM2 VN in out VSUBS sky130_fd_pr__nfet_01v8_648S5X
+C0 XM1/w_n211_n319# in 0.10fF
+C1 out VP -0.00fF
+C2 VN in 0.06fF
+C3 VN XM1/w_n211_n319# 0.00fF
+C4 out in 0.08fF
+C5 out XM1/w_n211_n319# 0.12fF
+C6 out VN -0.00fF
+C7 VP in 0.06fF
+C8 XM1/w_n211_n319# VP 0.10fF
+C9 in VSUBS 0.38fF
+C10 out VSUBS 0.40fF
+C11 VN VSUBS 0.33fF
+C12 VP VSUBS 0.16fF
+C13 XM1/w_n211_n319# VSUBS 1.13fF
 .ends
+
+
+*==========Simulation=========
+X1 in out net1 GND inverter
+V1 net1 GND 1.8
+.save i(net1)
+V2 in GND pulse(0 1.8 1n 1n 1n 4n 10n)
+.save i(in)
+**** begin user architecture code
+
+
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1n 20n
+plot v(in) v(out)
+.endc
 
 ```
 
+<br>
+<img src="Resources/week0/post_layout_sky130_sim.png" alt="post_layout_sky130_sim"> <br><br>
+<img src="Resources/week0/post_layout_sky130.png" alt="post_layout_sky130"> <br><br>
 
+### LVS Report Spice Netlist Magic
+The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
 
+```
+netgen -batch lvs inverter_pre.spice inverter_post.spice 
+```
+Subcircuit summary:
+Circuit 1: inverter_pre.spice              |Circuit 2: inverter_post.spice             
+-------------------------------------------|-------------------------------------------
+Instance: sky130_fd_pr__nfet_01v8:M2       |Instance: inverter:1/sky130_fd_pr__nfet_01 
+  1 = 2                                    |  1 = 8                                    
+  2 = 2                                    |  2 = 10                                   
+  3 = 2                                    |  3 = 8                                    
+  4 = 2                                    |  4 = 6                                    
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Cells have no pins;  pin matching not needed.
+Device classes inverter_pre.spice and inverter_post.spice are equivalent.
+
+Final result: Netlists do not match.
 
 
 ## Simulation of a function using Magic and Ngspice
