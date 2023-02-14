@@ -25,8 +25,8 @@ N 1090 -1410 1180 -1410 {
 lab=vin}
 C {sky130_fd_pr/nfet_01v8.sym} 1200 -1360 0 0 {name=M2
 L=0.15
-W=4.5
-nf=3 
+W=4.2
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -39,9 +39,9 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet3_01v8.sym} 1200 -1470 0 0 {name=M3
 L=0.15
-W=3
+W=8.4
 body=VDD
-nf=3
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"

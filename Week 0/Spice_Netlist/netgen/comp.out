@@ -1,0 +1,144 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+Flattening unmatched subcell inverter in circuit inverter_post.spice (1)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_XGS3BL in circuit inverter_post.spice (1)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_01v8_648S5X in circuit inverter_post.spice (1)(1 instance)
+
+Class inverter_post.spice (1):  Merged 14 parallel devices.
+Subcircuit summary:
+Circuit 1: inverter_pre.spice              |Circuit 2: inverter_post.spice             
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (1)                |sky130_fd_pr__nfet_01v8 (1)                
+sky130_fd_pr__pfet_01v8 (1)                |sky130_fd_pr__pfet_01v8 (1)                
+(no matching element)                      |c (30->16)                                 
+(no matching element)                      |vsrc (2)                                   
+Number of devices: 2 **Mismatch**          |Number of devices: 20 **Mismatch**         
+Number of nets: 4 **Mismatch**             |Number of nets: 6 **Mismatch**             
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: inverter_pre.spice              |Circuit 2: inverter_post.spice             
+
+---------------------------------------------------------------------------------------
+Net: vout                                  |Net: in                                    
+  sky130_fd_pr__nfet_01v8/1 = 1            |  sky130_fd_pr__pfet_01v8/2 = 1            
+  sky130_fd_pr__pfet_01v8/1 = 1            |  c/bottom = 4                             
+                                           |  c/top = 3                                
+                                           |  sky130_fd_pr__nfet_01v8/2 = 1            
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+Net: vin                                   |Net: net1                                  
+  sky130_fd_pr__nfet_01v8/2 = 1            |  sky130_fd_pr__pfet_01v8/3 = 1            
+  sky130_fd_pr__pfet_01v8/2 = 1            |  c/bottom = 2                             
+                                           |  c/top = 2                                
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+Net: vss                                   |Net: inverter:1/XM1/w_n211_n319#           
+  sky130_fd_pr__nfet_01v8/3 = 1            |  sky130_fd_pr__pfet_01v8/4 = 1            
+  sky130_fd_pr__nfet_01v8/4 = 1            |  c/top = 3                                
+                                           |  c/bottom = 2                             
+                                           |                                           
+Net: vdd                                   |Net: inverter:1/VSUBS                      
+  sky130_fd_pr__pfet_01v8/3 = 1            |  c/bottom = 5                             
+  sky130_fd_pr__pfet_01v8/4 = 1            |  sky130_fd_pr__nfet_01v8/4 = 1            
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+(no matching net)                          |Net: GND                                   
+                                           |  sky130_fd_pr__nfet_01v8/3 = 1            
+                                           |  c/bottom = 2                             
+                                           |  c/top = 3                                
+                                           |  vsrc/neg = 2                             
+                                           |                                           
+(no matching net)                          |Net: out                                   
+                                           |  sky130_fd_pr__pfet_01v8/1 = 1            
+                                           |  c/top = 5                                
+                                           |  sky130_fd_pr__nfet_01v8/1 = 1            
+                                           |  c/bottom = 1                             
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: inverter_pre.spice              |Circuit 2: inverter_post.spice             
+
+---------------------------------------------------------------------------------------
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 8                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 8                                  
+                                           |  bottom = 10                              
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 8                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 8                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__nfet_01 
+                                           |  top = 8                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/c:2                   
+                                           |  top = 8                                  
+                                           |  bottom = 10                              
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/c:3                   
+                                           |  top = 8                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 6                                  
+                                           |  bottom = 10                              
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 6                                  
+                                           |  bottom = 10                              
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 6                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 6                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 10                                 
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__pfet_01 
+                                           |  top = 6                                  
+                                           |  bottom = 6                               
+                                           |                                           
+(no matching instance)                     |Instance: inverter:1/sky130_fd_pr__nfet_01 
+                                           |  top = 8                                  
+                                           |  bottom = 8                               
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: sky130_fd_pr__pfet_01v8:M3       |Instance: inverter:1/sky130_fd_pr__pfet_01 
+  1 = 2                                    |  1 = 8                                    
+  2 = 2                                    |  2 = 10                                   
+  3 = 2                                    |  3 = 6                                    
+  4 = 2                                    |  4 = 6                                    
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: sky130_fd_pr__nfet_01v8:M2       |Instance: inverter:1/sky130_fd_pr__nfet_01 
+  1 = 2                                    |  1 = 8                                    
+  2 = 2                                    |  2 = 10                                   
+  3 = 2                                    |  3 = 8                                    
+  4 = 2                                    |  4 = 6                                    
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Cells have no pins;  pin matching not needed.
+Device classes inverter_pre.spice and inverter_post.spice are equivalent.
+
+Final result: Netlists do not match.

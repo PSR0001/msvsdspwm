@@ -1,11 +1,21 @@
 * SPICE3 file created from inverter.ext - technology: sky130A
+*Added manually
+X1 in out net1 GND inverter
+V1 net1 GND 1.8
+.save i(v1)
+V2 in GND pulse(0 1.8 1n 1n 1n 4n 10n)
+.save i(v2)
 
+* Added manually
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1n 20n
+plot v(in) v(out)
+.endc
+
+*Magic generated Netlist
 .subckt inverter vin vout vdd vss
 X0 vout vin vss vss sky130_fd_pr__nfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
 X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p ps=3.1e+06u w=1e+06u l=150000u
 .ends
-
-
-
-
-
