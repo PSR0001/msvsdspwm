@@ -601,9 +601,6 @@ plot v(in) v(out)
 
 ![ALIGN_GDS_LEF](Resources/week1/ALIGN_GDS_LEF.png)
 
-
-
-
 ## Design pre-layout using xschem/ngspice using SKY130 PDKS
 
 |![Pre_xschem](Resources/week1/Pre_xschem.png)|![Pre_xschem_sym](Resources/week1/Pre_xschem_sym.png)    |
