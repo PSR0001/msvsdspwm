@@ -1,5 +1,5 @@
 # Week 0 Task List 
-| S. No.   |Day|Action Item|Status| 
+| SL. No.   |Day|Action Item|Status| 
 |----------|--------|-------|-----------------------|
 |1.|1|Install Oracle virtual box with Ubuntu 20.04|✅|
 |2.|2|Install Magic, ngspice and SKY130 PDKs|✅|
