@@ -1,0 +1,51 @@
+2023-02-16 18:37:57 align.main INFO : Reading netlist: /home/coold69/ALIGN-public/ALIGN-pdk-sky130/examples/test/test.sp subckt=TEST, flat=0
+2023-02-16 18:37:57 align.compiler.compiler INFO : Starting topology identification...
+2023-02-16 18:37:58 align.compiler.compiler INFO : Power and ground nets not found. Power grid will not be constructed.
+2023-02-16 18:37:58 align.compiler.compiler INFO : Completed topology identification.
+2023-02-16 18:37:58 align.pnr.main INFO : Running Place & Route for TEST
+2023-02-16 18:37:58 align.pnr.build_pnr_model INFO : Reading contraint json file TEST.pnr.const.json
+2023-02-16 18:37:58 align.pnr.build_pnr_model INFO : Reading contraint json file INV_45746474.pnr.const.json
+2023-02-16 18:37:58 align.pnr.build_pnr_model INFO : Reading contraint json file TEST.pnr.const.json
+2023-02-16 18:37:58 align.pnr.build_pnr_model INFO : Reading contraint json file INV_45746474.pnr.const.json
+2023-02-16 18:37:58 align.pnr.placer INFO : Starting bottom-up placement on INV_45746474 1
+2023-02-16 18:37:58 PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+2023-02-16 18:37:58 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Exhausted all permutations of seq pairs and found 1 placement solution(s)
+2023-02-16 18:37:58 align.pnr.placer INFO : Starting bottom-up placement on TEST 0
+2023-02-16 18:37:58 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Required 1 perturbations to generate a feasible solution.
+2023-02-16 18:38:28 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 10 %
+2023-02-16 18:38:49 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 20 %
+2023-02-16 18:39:09 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 30 %
+2023-02-16 18:39:42 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 40 %
+2023-02-16 18:40:21 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 50 %
+2023-02-16 18:40:50 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 60 %
+2023-02-16 18:41:08 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 70 %
+2023-02-16 18:41:34 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 80 %
+2023-02-16 18:42:00 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : ..... 90 %
+2023-02-16 18:42:22 align.pnr.build_pnr_model INFO : Reading contraint json file TEST.pnr.const.json
+2023-02-16 18:42:22 align.pnr.build_pnr_model INFO : Reading contraint json file INV_45746474.pnr.const.json
+2023-02-16 18:42:22 PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+2023-02-16 18:42:23 align.pnr.router INFO : Starting top_down routing on TEST 0 restricted to None
+2023-02-16 18:42:23 PnR.router.Router.RouteWork INFO : GcellGlobalRouter: INV_45746474
+2023-02-16 18:42:23 PnR.router.Router.RouteWork INFO : GcellDetailRouter: INV_45746474
+2023-02-16 18:42:23 PnR.router.Router.RouteWork INFO : GcellGlobalRouter: TEST
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.GlobalGraph.dijkstra WARNING : Router-Warning: feasible path might not be found
+2023-02-16 18:42:23 PnR.router.Router.RouteWork INFO : GcellDetailRouter: TEST
+2023-02-16 18:42:23 PnR.router.Router.RouteWork INFO : Create power grid: TEST
+2023-02-16 18:42:24 PnR.router.Router.RouteWork INFO : Power routing TEST
+2023-02-16 18:42:24 align.pnr.main INFO : OUTPUT json at /home/coold69/ALIGN-public/work2/3_pnr/INV_45746474_0_0.json
+2023-02-16 18:42:24 align.pnr.main INFO : OUTPUT gds.json /home/coold69/ALIGN-public/work2/3_pnr/INV_45746474_0_0.python.gds.json
+2023-02-16 18:42:24 align.pnr.main INFO : OUTPUT json at /home/coold69/ALIGN-public/work2/3_pnr/TEST_0.json
+2023-02-16 18:42:24 align.pnr.main INFO : OUTPUT gds.json /home/coold69/ALIGN-public/work2/3_pnr/TEST_0.python.gds.json

@@ -1,0 +1,151 @@
+{
+  "constraints": [
+    {
+      "pairs": [
+        {
+          "type": "sympair",
+          "block1": "X_XM16",
+          "block2": "X_XM13"
+        },
+        {
+          "type": "sympair",
+          "block1": "X_XM17",
+          "block2": "X_XM14"
+        },
+        {
+          "type": "sympair",
+          "block1": "X_XM21",
+          "block2": "X_XM23"
+        },
+        {
+          "type": "selfsym",
+          "block": "X_XM22_XM24"
+        }
+      ],
+      "const_name": "SymmBlock",
+      "axis_dir": "V"
+    },
+    {
+      "net1": {
+        "name": "A",
+        "blocks": [
+          {
+            "type": "pin",
+            "name": "X_XM22_XM24",
+            "pin": "GA"
+          },
+          {
+            "type": "pin",
+            "name": "X_XM16",
+            "pin": "G"
+          },
+          {
+            "type": "terminal",
+            "name": "A",
+            "pin": null
+          }
+        ]
+      },
+      "net2": {
+        "name": "B",
+        "blocks": [
+          {
+            "type": "pin",
+            "name": "X_XM22_XM24",
+            "pin": "GB"
+          },
+          {
+            "type": "pin",
+            "name": "X_XM13",
+            "pin": "G"
+          },
+          {
+            "type": "terminal",
+            "name": "B",
+            "pin": null
+          }
+        ]
+      },
+      "const_name": "SymmNet",
+      "axis_dir": "V"
+    },
+    {
+      "net1": {
+        "name": "C",
+        "blocks": [
+          {
+            "type": "pin",
+            "name": "X_XM17",
+            "pin": "G"
+          },
+          {
+            "type": "pin",
+            "name": "X_XM21",
+            "pin": "G"
+          },
+          {
+            "type": "terminal",
+            "name": "C",
+            "pin": null
+          }
+        ]
+      },
+      "net2": {
+        "name": "D",
+        "blocks": [
+          {
+            "type": "pin",
+            "name": "X_XM14",
+            "pin": "G"
+          },
+          {
+            "type": "pin",
+            "name": "X_XM23",
+            "pin": "G"
+          },
+          {
+            "type": "terminal",
+            "name": "D",
+            "pin": null
+          }
+        ]
+      },
+      "const_name": "SymmNet",
+      "axis_dir": "V"
+    },
+    {
+      "net1": {
+        "name": "NET4",
+        "blocks": [
+          {
+            "type": "pin",
+            "name": "X_XM22_XM24",
+            "pin": "DA"
+          },
+          {
+            "type": "pin",
+            "name": "X_XM21",
+            "pin": "S"
+          }
+        ]
+      },
+      "net2": {
+        "name": "NET5",
+        "blocks": [
+          {
+            "type": "pin",
+            "name": "X_XM22_XM24",
+            "pin": "DB"
+          },
+          {
+            "type": "pin",
+            "name": "X_XM23",
+            "pin": "S"
+          }
+        ]
+      },
+      "const_name": "SymmNet",
+      "axis_dir": "V"
+    }
+  ]
+}

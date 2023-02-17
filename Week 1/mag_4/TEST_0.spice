@@ -1,0 +1,79 @@
+* SPICE3 file created from TEST_0.ext - technology: sky130A
+
+X0 Y E m1_312_224# m1_312_224# sky130_fd_pr__pfet_01v8 ad=9.408e+11p pd=7.84e+06u as=2.7216e+12p ps=2.34e+07u w=1.68e+06u l=150000u
+X1 m1_312_224# E Y m1_312_224# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X2 Y E VSS VSS sky130_fd_pr__nfet_01v8 ad=7.056e+11p pd=6.72e+06u as=3.3768e+12p ps=3.324e+07u w=840000u l=150000u
+X3 VSS E Y VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X4 VDD li_2813_487# VDD VDD sky130_fd_pr__pfet_01v8 ad=4.0824e+12p pd=3.51e+07u as=0p ps=0u w=1.68e+06u l=150000u
+X5 VDD m1_1978_560# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X6 VDD m1_1978_560# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X7 VDD li_2813_487# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X8 Y m1_1806_2408# VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X9 VSS m1_1806_2408# Y VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X10 m1_312_224# m1_2838_2408# VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X11 VDD m1_2838_2408# m1_312_224# VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X12 Y m1_1978_560# VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X13 VSS m1_1978_560# Y VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X14 m1_312_224# C VDD VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X15 VDD C m1_312_224# VDD sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X16 VSS F VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X17 VSS F VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X18 VSS D VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X19 VSS D VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X20 Y m1_946_560# m1_312_224# m1_312_224# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X21 m1_312_224# m1_946_560# Y m1_312_224# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X22 VSS B VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+X23 VSS B VSS VSS sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+C0 Y m1_312_224# 2.27fF
+C1 VDD C 0.91fF
+C2 m1_946_560# m1_312_224# 0.66fF
+C3 li_2813_487# m1_312_224# 0.00fF
+C4 A B 0.00fF
+C5 m1_946_560# Y 0.10fF
+C6 VDD F 0.00fF
+C7 D C 0.03fF
+C8 m1_312_224# C 0.11fF
+C9 m1_1806_2408# m1_312_224# 0.00fF
+C10 Y C 0.00fF
+C11 m1_1806_2408# Y 0.11fF
+C12 F m1_312_224# 0.26fF
+C13 B VDD 0.26fF
+C14 VDD m1_1978_560# 0.67fF
+C15 F Y 0.01fF
+C16 A VDD 0.18fF
+C17 VDD m1_2838_2408# 0.66fF
+C18 B D 0.00fF
+C19 B m1_312_224# 0.00fF
+C20 m1_312_224# m1_1978_560# 0.00fF
+C21 m1_312_224# E 0.99fF
+C22 A m1_312_224# 0.00fF
+C23 m1_2838_2408# m1_312_224# 0.10fF
+C24 Y m1_1978_560# 0.11fF
+C25 Y E 0.39fF
+C26 A Y 0.01fF
+C27 m1_946_560# m1_1978_560# 0.00fF
+C28 li_2813_487# m1_1978_560# 0.21fF
+C29 VDD D 0.15fF
+C30 VDD m1_312_224# 3.16fF
+C31 E C 0.01fF
+C32 VDD Y 0.07fF
+C33 A C 0.00fF
+C34 B F 0.00fF
+C35 D m1_312_224# 0.00fF
+C36 m1_2838_2408# m1_1806_2408# 0.00fF
+C37 F E 0.03fF
+C38 VDD li_2813_487# 0.67fF
+C39 A F 0.03fF
+C40 A VSS 0.08fF
+C41 B VSS 0.57fF **FLOATING
+C42 m1_946_560# VSS 0.14fF **FLOATING
+C43 D VSS 0.67fF **FLOATING
+C44 F VSS 0.49fF **FLOATING
+C45 m1_2838_2408# VSS 0.15fF **FLOATING
+C46 m1_1806_2408# VSS 0.97fF **FLOATING
+C47 VDD VSS 9.73fF **FLOATING
+C48 li_2813_487# VSS 0.28fF **FLOATING
+C49 m1_1978_560# VSS 0.98fF **FLOATING
+C50 Y VSS 2.91fF **FLOATING
+C51 E VSS 1.39fF **FLOATING
+C52 m1_312_224# VSS 4.58fF **FLOATING

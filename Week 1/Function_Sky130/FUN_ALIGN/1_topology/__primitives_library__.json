@@ -1,0 +1,219 @@
+[
+  {
+    "name": "SKY130_FD_PR__PFET_01V8",
+    "base": "PMOS",
+    "pins": [
+      "D",
+      "G",
+      "S",
+      "B"
+    ],
+    "parameters": {
+      "W": "1",
+      "L": "1",
+      "NFIN": "1",
+      "NF": "2",
+      "M": "1",
+      "PARALLEL": "1",
+      "STACK": "1"
+    },
+    "prefix": ""
+  },
+  {
+    "name": "DP_PMOS_83764739",
+    "base": null,
+    "pins": [
+      "DA",
+      "DB",
+      "GA",
+      "GB",
+      "S"
+    ],
+    "parameters": {},
+    "prefix": "",
+    "elements": [
+      {
+        "model": "SKY130_FD_PR__PFET_01V8",
+        "name": "M1",
+        "pins": {
+          "D": "DA",
+          "G": "GA",
+          "S": "S",
+          "B": "S"
+        },
+        "parameters": {
+          "W": "1.68E-06",
+          "L": "1.8000000000000002E-07",
+          "NFIN": "1",
+          "NF": "2",
+          "M": "1",
+          "PARALLEL": "1",
+          "STACK": "1"
+        },
+        "abstract_name": null
+      },
+      {
+        "model": "SKY130_FD_PR__PFET_01V8",
+        "name": "M2",
+        "pins": {
+          "D": "DB",
+          "G": "GB",
+          "S": "S",
+          "B": "S"
+        },
+        "parameters": {
+          "W": "1.68E-06",
+          "L": "1.8000000000000002E-07",
+          "NFIN": "1",
+          "NF": "2",
+          "M": "1",
+          "PARALLEL": "1",
+          "STACK": "1"
+        },
+        "abstract_name": null
+      }
+    ],
+    "generator": {
+      "name": "MOS"
+    },
+    "constraints": [
+      {
+        "constraint": "Generator",
+        "name": "MOS",
+        "parameters": null
+      },
+      {
+        "constraint": "SymmetricBlocks",
+        "pairs": [
+          [
+            "M1",
+            "M2"
+          ]
+        ],
+        "direction": "V"
+      },
+      {
+        "constraint": "SymmetricNets",
+        "net1": "DA",
+        "net2": "DB",
+        "pins1": null,
+        "pins2": null,
+        "direction": "V"
+      },
+      {
+        "constraint": "SymmetricNets",
+        "net1": "S",
+        "net2": "S",
+        "pins1": null,
+        "pins2": null,
+        "direction": "V"
+      }
+    ]
+  },
+  {
+    "name": "SKY130_FD_PR__NFET_01V8",
+    "base": "NMOS",
+    "pins": [
+      "D",
+      "G",
+      "S",
+      "B"
+    ],
+    "parameters": {
+      "W": "1",
+      "L": "1",
+      "NFIN": "1",
+      "NF": "2",
+      "M": "1",
+      "PARALLEL": "1",
+      "STACK": "1"
+    },
+    "prefix": ""
+  },
+  {
+    "name": "NMOS_S_54129001",
+    "base": null,
+    "pins": [
+      "D",
+      "G",
+      "S"
+    ],
+    "parameters": {},
+    "prefix": "",
+    "elements": [
+      {
+        "model": "SKY130_FD_PR__NFET_01V8",
+        "name": "M1",
+        "pins": {
+          "D": "D",
+          "G": "G",
+          "S": "S",
+          "B": "S"
+        },
+        "parameters": {
+          "W": "8.4E-07",
+          "L": "1.8000000000000002E-07",
+          "NFIN": "1",
+          "NF": "2",
+          "M": "1",
+          "PARALLEL": "1",
+          "STACK": "1"
+        },
+        "abstract_name": null
+      }
+    ],
+    "generator": {
+      "name": "MOS"
+    },
+    "constraints": [
+      {
+        "constraint": "Generator",
+        "name": "MOS",
+        "parameters": null
+      }
+    ]
+  },
+  {
+    "name": "PMOS_S_95137167",
+    "base": null,
+    "pins": [
+      "D",
+      "G",
+      "S"
+    ],
+    "parameters": {},
+    "prefix": "",
+    "elements": [
+      {
+        "model": "SKY130_FD_PR__PFET_01V8",
+        "name": "M1",
+        "pins": {
+          "D": "D",
+          "G": "G",
+          "S": "S",
+          "B": "S"
+        },
+        "parameters": {
+          "W": "1.68E-06",
+          "L": "1.8000000000000002E-07",
+          "NFIN": "1",
+          "NF": "2",
+          "M": "1",
+          "PARALLEL": "1",
+          "STACK": "1"
+        },
+        "abstract_name": null
+      }
+    ],
+    "generator": {
+      "name": "MOS"
+    },
+    "constraints": [
+      {
+        "constraint": "Generator",
+        "name": "MOS",
+        "parameters": null
+      }
+    ]
+  }
+]

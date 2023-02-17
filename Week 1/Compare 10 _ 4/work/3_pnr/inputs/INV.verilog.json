@@ -1,0 +1,53 @@
+{
+  "modules": [
+    {
+      "name": "INV",
+      "parameters": [
+        "VIN",
+        "VOUT",
+        "VDD",
+        "VSS"
+      ],
+      "constraints": [],
+      "instances": [
+        {
+          "instance_name": "X_XM3",
+          "fa_map": [
+            {
+              "formal": "D",
+              "actual": "VOUT"
+            },
+            {
+              "formal": "G",
+              "actual": "VIN"
+            },
+            {
+              "formal": "S",
+              "actual": "VSS"
+            }
+          ],
+          "abstract_template_name": "NMOS_S_96839798"
+        },
+        {
+          "instance_name": "X_XM2",
+          "fa_map": [
+            {
+              "formal": "D",
+              "actual": "VOUT"
+            },
+            {
+              "formal": "G",
+              "actual": "VIN"
+            },
+            {
+              "formal": "S",
+              "actual": "VDD"
+            }
+          ],
+          "abstract_template_name": "PMOS_S_36030836"
+        }
+      ]
+    }
+  ],
+  "global_signals": []
+}

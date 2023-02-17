@@ -1,0 +1,223 @@
+{
+    "Blocks": [
+        {
+            "Box": {
+                "LLx": 5160,
+                "LLy": 0,
+                "Physical Layer": "null",
+                "URx": 10320,
+                "URy": 15120
+            },
+            "Height": 15120,
+            "Name": "X_XM3",
+            "Pins": [
+                {
+                    "Internal Metal": [
+                        {
+                            "LLx": 5680,
+                            "LLy": 560,
+                            "Physical Layer": "M2",
+                            "URx": 8080,
+                            "URy": 1120
+                        }
+                    ],
+                    "Name": "D"
+                },
+                {
+                    "Internal Metal": [
+                        {
+                            "LLx": 5680,
+                            "LLy": 8960,
+                            "Physical Layer": "M2",
+                            "URx": 8080,
+                            "URy": 9520
+                        }
+                    ],
+                    "Name": "G"
+                },
+                {
+                    "Internal Metal": [
+                        {
+                            "LLx": 8320,
+                            "LLy": 1360,
+                            "Physical Layer": "M3",
+                            "URx": 8880,
+                            "URy": 13760
+                        }
+                    ],
+                    "Name": "S"
+                }
+            ],
+            "Width": 5160
+        },
+        {
+            "Box": {
+                "LLx": 0,
+                "LLy": 0,
+                "Physical Layer": "null",
+                "URx": 5160,
+                "URy": 15120
+            },
+            "Height": 15120,
+            "Name": "X_XM2",
+            "Pins": [
+                {
+                    "Internal Metal": [
+                        {
+                            "LLx": 2240,
+                            "LLy": 560,
+                            "Physical Layer": "M2",
+                            "URx": 4640,
+                            "URy": 1120
+                        }
+                    ],
+                    "Name": "D"
+                },
+                {
+                    "Internal Metal": [
+                        {
+                            "LLx": 2240,
+                            "LLy": 8960,
+                            "Physical Layer": "M2",
+                            "URx": 4640,
+                            "URy": 9520
+                        }
+                    ],
+                    "Name": "G"
+                },
+                {
+                    "Internal Metal": [
+                        {
+                            "LLx": 1440,
+                            "LLy": 1360,
+                            "Physical Layer": "M3",
+                            "URx": 2000,
+                            "URy": 13760
+                        }
+                    ],
+                    "Name": "S"
+                }
+            ],
+            "Width": 5160
+        }
+    ],
+    "Cell Name": "INV",
+    "Cell box": {
+        "LLx": 0,
+        "LLy": 0,
+        "Physical Layer": "null",
+        "URx": 10320,
+        "URy": 15120
+    },
+    "Gcell": [
+        {
+            "Physical Layer": 0,
+            "x": 5160,
+            "y": 7560
+        },
+        {
+            "Physical Layer": 1,
+            "x": 5160,
+            "y": 7560
+        },
+        {
+            "Physical Layer": 2,
+            "x": 5160,
+            "y": 7560
+        },
+        {
+            "Physical Layer": 3,
+            "x": 5160,
+            "y": 7560
+        },
+        {
+            "Physical Layer": 4,
+            "x": 5160,
+            "y": 7560
+        }
+    ],
+    "Glbaol_Routes": [
+        {
+            "global_path": [
+                {
+                    "Physical Layer ll": 1,
+                    "Physical Layer ur": 1,
+                    "llx": 5160,
+                    "lly": 7560,
+                    "urx": 5160,
+                    "ury": 7560
+                }
+            ],
+            "name": "VOUT",
+            "terminals": [
+                {
+                    "Physical Layer": 1,
+                    "x": 5160,
+                    "y": 7560
+                }
+            ]
+        },
+        {
+            "global_path": [
+                {
+                    "Physical Layer ll": 1,
+                    "Physical Layer ur": 1,
+                    "llx": 5160,
+                    "lly": 7560,
+                    "urx": 5160,
+                    "ury": 7560
+                }
+            ],
+            "name": "VIN",
+            "terminals": [
+                {
+                    "Physical Layer": 1,
+                    "x": 5160,
+                    "y": 7560
+                }
+            ]
+        },
+        {
+            "global_path": [
+                {
+                    "Physical Layer ll": 2,
+                    "Physical Layer ur": 2,
+                    "llx": 5160,
+                    "lly": 7560,
+                    "urx": 5160,
+                    "ury": 7560
+                }
+            ],
+            "name": "VSS",
+            "terminals": [
+                {
+                    "Physical Layer": 2,
+                    "x": 5160,
+                    "y": 7560
+                }
+            ]
+        },
+        {
+            "global_path": [
+                {
+                    "Physical Layer ll": 2,
+                    "Physical Layer ur": 2,
+                    "llx": 5160,
+                    "lly": 7560,
+                    "urx": 5160,
+                    "ury": 7560
+                }
+            ],
+            "name": "VDD",
+            "terminals": [
+                {
+                    "Physical Layer": 2,
+                    "x": 5160,
+                    "y": 7560
+                }
+            ]
+        }
+    ],
+    "Istop": true,
+    "Units": "0.5nm"
+}

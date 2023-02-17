@@ -1,0 +1,28 @@
+[
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM3",
+    "instances": [
+      "XM3"
+    ],
+    "template_name": "NMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM2",
+    "instances": [
+      "XM2"
+    ],
+    "template_name": "PMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  }
+]

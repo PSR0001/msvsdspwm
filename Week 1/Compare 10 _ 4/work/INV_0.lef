@@ -1,0 +1,87 @@
+MACRO INV
+  ORIGIN 0 0 ;
+  FOREIGN INV 0 0 ;
+  SIZE 5.16 BY 7.56 ;
+  PIN VOUT
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT 
+      LAYER M2 ;
+        RECT 1.12 0.28 2.32 0.56 ;
+      LAYER M2 ;
+        RECT 2.84 0.28 4.04 0.56 ;
+      LAYER M2 ;
+        RECT 2.15 0.28 3.01 0.56 ;
+    END
+  END VOUT
+  PIN VIN
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT 
+      LAYER M2 ;
+        RECT 1.12 4.48 2.32 4.76 ;
+      LAYER M2 ;
+        RECT 2.84 4.48 4.04 4.76 ;
+      LAYER M2 ;
+        RECT 2.15 4.48 3.01 4.76 ;
+    END
+  END VIN
+  PIN VSS
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT 
+      LAYER M3 ;
+        RECT 4.16 0.68 4.44 6.88 ;
+    END
+  END VSS
+  PIN VDD
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT 
+      LAYER M3 ;
+        RECT 0.72 0.68 1 6.88 ;
+    END
+  END VDD
+  OBS 
+  LAYER M1 ;
+        RECT 3.745 0.335 3.995 3.865 ;
+  LAYER M1 ;
+        RECT 3.745 4.115 3.995 5.125 ;
+  LAYER M1 ;
+        RECT 3.745 6.215 3.995 7.225 ;
+  LAYER M1 ;
+        RECT 3.315 0.335 3.565 3.865 ;
+  LAYER M1 ;
+        RECT 4.175 0.335 4.425 3.865 ;
+  LAYER M2 ;
+        RECT 3.27 6.58 4.47 6.86 ;
+  LAYER M2 ;
+        RECT 3.27 0.7 4.47 0.98 ;
+  LAYER M2 ;
+        RECT 2.84 0.28 4.04 0.56 ;
+  LAYER M2 ;
+        RECT 2.84 4.48 4.04 4.76 ;
+  LAYER M3 ;
+        RECT 4.16 0.68 4.44 6.88 ;
+  LAYER M1 ;
+        RECT 1.165 0.335 1.415 3.865 ;
+  LAYER M1 ;
+        RECT 1.165 4.115 1.415 5.125 ;
+  LAYER M1 ;
+        RECT 1.165 6.215 1.415 7.225 ;
+  LAYER M1 ;
+        RECT 1.595 0.335 1.845 3.865 ;
+  LAYER M1 ;
+        RECT 0.735 0.335 0.985 3.865 ;
+  LAYER M2 ;
+        RECT 0.69 6.58 1.89 6.86 ;
+  LAYER M2 ;
+        RECT 0.69 0.7 1.89 0.98 ;
+  LAYER M2 ;
+        RECT 1.12 0.28 2.32 0.56 ;
+  LAYER M2 ;
+        RECT 1.12 4.48 2.32 4.76 ;
+  LAYER M3 ;
+        RECT 0.72 0.68 1 6.88 ;
+  END 
+END INV

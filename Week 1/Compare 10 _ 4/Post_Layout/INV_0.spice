@@ -1,0 +1,60 @@
+* NGSPICE file created from INV_0.ext - technology: sky130A
+
+.subckt NMOS_S_96839798_X1_Y1_1676315448 a_147_525# a_200_252# a_230_525#
+X0 a_230_525# a_200_252# a_147_525# a_147_525# sky130_fd_pr__nfet_01v8 ad=1.176e+11p pd=1.4e+06u as=2.226e+11p ps=2.74e+06u w=420000u l=150000u
+X1 a_147_525# a_200_252# a_230_525# a_147_525# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=420000u l=150000u
+C0 a_200_252# a_230_525# 0.12fF
+C1 a_230_525# a_147_525# 0.73fF
+C2 a_200_252# a_147_525# 0.97fF
+.ends
+
+.subckt PMOS_S_36030836_X1_Y1_1676315449 a_200_252# a_230_483# w_0_0# VSUBS
+X0 a_230_483# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
+X1 w_0_0# a_200_252# a_230_483# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+C0 w_0_0# a_200_252# 0.80fF
+C1 w_0_0# a_230_483# 0.78fF
+C2 a_230_483# a_200_252# 0.11fF
+C3 a_230_483# VSUBS -0.04fF
+C4 a_200_252# VSUBS 0.09fF
+C5 w_0_0# VSUBS 2.97fF
+.ends
+
+.subckt INV_0 vin vout vdd vss
+XNMOS_S_96839798_X1_Y1_1676315448_0 vss vin vout NMOS_S_96839798_X1_Y1_1676315448
+XPMOS_S_36030836_X1_Y1_1676315449_0 vin vout vdd vss PMOS_S_36030836_X1_Y1_1676315449
+C0 VSS vout 0.01fF
+C1 vdd VSS 0.28fF
+C2 vin vout 0.01fF
+C3 vdd vin 0.15fF
+C4 vin VSS 0.02fF
+C5 vdd vout 0.05fF
+C6 vdd vss 2.75fF
+C7 vin vss 0.79fF
+C8 vout vss 0.66fF
+.ends
+
+
+X1 in out net1 GND INV_0
+V1 net1 GND 1.8
+.save i(net1)
+V2 in GND pulse(0 1.8 1n 1n 1n 4n 10n)
+.save i(in)
+**** begin user architecture code
+
+
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1n 20n
+plot v(in) v(out)
+.endc
+
+
+
+
+
+
+
+
+
+

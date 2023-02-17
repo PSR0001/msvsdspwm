@@ -1,0 +1,19 @@
+2023-02-14 00:40:46 align.main INFO : Reading netlist: /home/coold69/ALIGN-public/ALIGN-pdk-sky130/examples/INV/INV.sp subckt=INV, flat=0
+2023-02-14 00:40:46 align.compiler.compiler INFO : Starting topology identification...
+2023-02-14 00:40:47 align.compiler.compiler INFO : Power and ground nets not found. Power grid will not be constructed.
+2023-02-14 00:40:47 align.compiler.compiler INFO : Completed topology identification.
+2023-02-14 00:40:47 align.pnr.main INFO : Running Place & Route for INV
+2023-02-14 00:40:47 align.pnr.build_pnr_model INFO : Reading contraint json file INV.pnr.const.json
+2023-02-14 00:40:47 align.pnr.build_pnr_model INFO : Reading contraint json file INV.pnr.const.json
+2023-02-14 00:40:47 align.pnr.placer INFO : Starting bottom-up placement on INV 0
+2023-02-14 00:40:47 PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+2023-02-14 00:40:47 PnR.placer.Placer.PlacementCoreAspectRatio_ILP INFO : Exhausted all permutations of seq pairs and found 1 placement solution(s)
+2023-02-14 00:40:47 align.pnr.build_pnr_model INFO : Reading contraint json file INV.pnr.const.json
+2023-02-14 00:40:47 PnR.placer.SeqPair.SeqPair INFO : Enumerated search
+2023-02-14 00:40:47 align.pnr.router INFO : Starting top_down routing on INV 0 restricted to None
+2023-02-14 00:40:47 PnR.router.Router.RouteWork INFO : GcellGlobalRouter: INV
+2023-02-14 00:40:47 PnR.router.Router.RouteWork INFO : GcellDetailRouter: INV
+2023-02-14 00:40:47 PnR.router.Router.RouteWork INFO : Create power grid: INV
+2023-02-14 00:40:47 PnR.router.Router.RouteWork INFO : Power routing INV
+2023-02-14 00:40:47 align.pnr.main INFO : OUTPUT json at /home/coold69/ALIGN-public/work/3_pnr/INV_0.json
+2023-02-14 00:40:47 align.pnr.main INFO : OUTPUT gds.json /home/coold69/ALIGN-public/work/3_pnr/INV_0.python.gds.json

@@ -1,0 +1,154 @@
+{
+  "modules": [
+    {
+      "parameters": [
+        "VIN",
+        "VOUT",
+        "VDD",
+        "VSS"
+      ],
+      "constraints": [],
+      "instances": [
+        {
+          "instance_name": "X_XM3",
+          "fa_map": [
+            {
+              "formal": "D",
+              "actual": "VOUT"
+            },
+            {
+              "formal": "G",
+              "actual": "VIN"
+            },
+            {
+              "formal": "S",
+              "actual": "VSS"
+            }
+          ],
+          "abstract_template_name": "NMOS_S_96839798_X1_Y1",
+          "concrete_template_name": "NMOS_S_96839798_X1_Y1",
+          "transformation": {
+            "oX": 2580,
+            "oY": 0,
+            "sX": 1,
+            "sY": 1
+          }
+        },
+        {
+          "instance_name": "X_XM2",
+          "fa_map": [
+            {
+              "formal": "D",
+              "actual": "VOUT"
+            },
+            {
+              "formal": "G",
+              "actual": "VIN"
+            },
+            {
+              "formal": "S",
+              "actual": "VDD"
+            }
+          ],
+          "abstract_template_name": "PMOS_S_36030836_X1_Y1",
+          "concrete_template_name": "PMOS_S_36030836_X1_Y1",
+          "transformation": {
+            "oX": 2580,
+            "oY": 0,
+            "sX": -1,
+            "sY": 1
+          }
+        }
+      ],
+      "abstract_name": "INV",
+      "concrete_name": "INV_0",
+      "bbox": [
+        0,
+        0,
+        5160,
+        7560
+      ]
+    }
+  ],
+  "leaves": [
+    {
+      "abstract_name": "NMOS_S_96839798_X1_Y1",
+      "concrete_name": "NMOS_S_96839798_X1_Y1",
+      "bbox": [
+        0,
+        0,
+        2580,
+        7560
+      ],
+      "terminals": [
+        {
+          "name": "D",
+          "rect": [
+            260,
+            280,
+            1460,
+            560
+          ]
+        },
+        {
+          "name": "G",
+          "rect": [
+            260,
+            4480,
+            1460,
+            4760
+          ]
+        },
+        {
+          "name": "S",
+          "rect": [
+            1580,
+            680,
+            1860,
+            6880
+          ]
+        }
+      ]
+    },
+    {
+      "abstract_name": "PMOS_S_36030836_X1_Y1",
+      "concrete_name": "PMOS_S_36030836_X1_Y1",
+      "bbox": [
+        0,
+        0,
+        2580,
+        7560
+      ],
+      "terminals": [
+        {
+          "name": "D",
+          "rect": [
+            260,
+            280,
+            1460,
+            560
+          ]
+        },
+        {
+          "name": "G",
+          "rect": [
+            260,
+            4480,
+            1460,
+            4760
+          ]
+        },
+        {
+          "name": "S",
+          "rect": [
+            1580,
+            680,
+            1860,
+            6880
+          ]
+        }
+      ]
+    }
+  ],
+  "global_signals": []
+}

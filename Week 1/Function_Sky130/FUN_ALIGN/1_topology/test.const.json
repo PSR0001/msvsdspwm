@@ -1,0 +1,198 @@
+[
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM18_XM19",
+    "instances": [
+      "XM18",
+      "XM19"
+    ],
+    "template_name": "INV",
+    "generator": null,
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM22_XM24",
+    "instances": [
+      "XM22",
+      "XM24"
+    ],
+    "template_name": "DP_PMOS",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM13",
+    "instances": [
+      "XM13"
+    ],
+    "template_name": "NMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM14",
+    "instances": [
+      "XM14"
+    ],
+    "template_name": "NMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM15",
+    "instances": [
+      "XM15"
+    ],
+    "template_name": "NMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM16",
+    "instances": [
+      "XM16"
+    ],
+    "template_name": "NMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM17",
+    "instances": [
+      "XM17"
+    ],
+    "template_name": "NMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM20",
+    "instances": [
+      "XM20"
+    ],
+    "template_name": "PMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM21",
+    "instances": [
+      "XM21"
+    ],
+    "template_name": "PMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "GroupBlocks",
+    "instance_name": "X_XM23",
+    "instances": [
+      "XM23"
+    ],
+    "template_name": "PMOS_S",
+    "generator": {
+      "name": "MOS",
+      "parameters": null
+    },
+    "constraints": null
+  },
+  {
+    "constraint": "SymmetricBlocks",
+    "pairs": [
+      [
+        "X_XM16",
+        "X_XM13"
+      ],
+      [
+        "X_XM17",
+        "X_XM14"
+      ],
+      [
+        "X_XM21",
+        "X_XM23"
+      ],
+      [
+        "X_XM22_XM24"
+      ]
+    ],
+    "direction": "V"
+  },
+  {
+    "constraint": "SymmetricNets",
+    "net1": "A",
+    "net2": "B",
+    "pins1": [
+      "X_XM22_XM24/GA",
+      "X_XM16/G",
+      "A"
+    ],
+    "pins2": [
+      "X_XM22_XM24/GB",
+      "X_XM13/G",
+      "B"
+    ],
+    "direction": "V"
+  },
+  {
+    "constraint": "SymmetricNets",
+    "net1": "C",
+    "net2": "D",
+    "pins1": [
+      "X_XM17/G",
+      "X_XM21/G",
+      "C"
+    ],
+    "pins2": [
+      "X_XM14/G",
+      "X_XM23/G",
+      "D"
+    ],
+    "direction": "V"
+  },
+  {
+    "constraint": "SymmetricNets",
+    "net1": "NET4",
+    "net2": "NET5",
+    "pins1": [
+      "X_XM22_XM24/DA",
+      "X_XM21/S"
+    ],
+    "pins2": [
+      "X_XM22_XM24/DB",
+      "X_XM23/S"
+    ],
+    "direction": "V"
+  }
+]

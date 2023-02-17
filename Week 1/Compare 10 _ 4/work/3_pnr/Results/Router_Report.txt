@@ -1,0 +1,8 @@
+Node INV_0
+  Net VOUT
+    Pin X_XM2.D Find a path 1
+    Pin X_XM3.D Find a path 1
+  Net VIN
+    Pin X_XM2.G Find a path 1
+    Pin X_XM3.G Find a path 1
+Node 

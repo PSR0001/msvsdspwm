@@ -1,0 +1,15 @@
+v {xschem version=3.1.0 file_version=1.2
+}
+G {}
+K {}
+V {}
+S {}
+E {}
+L 4 0 -110 0 90 {}
+L 4 0 -110 140 -110 {}
+L 4 140 -110 140 90 {}
+L 4 0 90 140 90 {}
+L 4 140 -10 180 -10 {}
+L 4 70 -130 70 -110 {}
+L 4 80 90 80 120 {}
+C {devices/lab_pin.sym} -80 -80 0 0 {name=p1 sig_type=std_logic lab=xxx}

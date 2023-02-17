@@ -1,0 +1,33 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1676388708
+<< metal1 >>
+rect 372 1316 410 1372
+rect 630 1316 654 1372
+rect 550 952 590 970
+rect 430 896 602 952
+rect 520 112 570 140
+rect 430 56 602 112
+use NMOS_S_96839798_X1_Y1_1676315448  NMOS_S_96839798_X1_Y1_1676315448_0
+timestamp 1676388708
+transform 1 0 516 0 1 0
+box 52 56 395 1482
+use PMOS_S_36030836_X1_Y1_1676315449  PMOS_S_36030836_X1_Y1_1676315449_0
+timestamp 1676388708
+transform -1 0 516 0 1 0
+box 0 0 516 1512
+<< labels >>
+flabel metal1 s 344 84 344 84 0 FreeSerif 0 0 0 0 VOUT
+flabel metal1 s 344 924 344 924 0 FreeSerif 0 0 0 0 VIN
+flabel metal2 s 860 756 860 756 0 FreeSerif 0 0 0 0 VSS
+flabel metal2 s 172 756 172 756 0 FreeSerif 0 0 0 0 VDD
+rlabel metal1 570 970 570 970 3 vin
+port 1 e
+rlabel metal1 540 140 540 140 3 vout
+port 2 e
+rlabel metal1 410 1350 410 1350 3 vdd
+port 3 e
+rlabel metal1 630 1350 630 1350 3 vss
+port 4 e
+<< end >>

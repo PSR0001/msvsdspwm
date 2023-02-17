@@ -1,0 +1,52 @@
+Node INV_45746474_0
+  Net ZN
+    Pin X_M1.D Find a path 1
+    Pin X_M0.D Find a path 1
+  Net I
+    Pin X_M1.G Find a path 1
+    Pin X_M0.G Find a path 1
+Node TEST_0
+  Net NET1
+    Pin X_XM18_XM19.SN Find a path 1
+    Pin X_XM15.D Find a path 1
+  Net NET3
+    Pin X_XM18_XM19.SP Find a path 1
+    Pin X_XM20.S Find a path 1
+    Pin X_XM21.D Find a path 1
+    Pin X_XM23.D Find a path 1
+  Net Y
+    Pin X_XM18_XM19.ZN Find a path 1
+    Pin X_XM20.D Find a path 1
+    Pin X_XM17.D Find a path 1
+    Pin X_XM16.D Find a path 1
+  Net NET4
+    Pin X_XM22_XM24.DA Find a path 1
+    Pin X_XM21.S Find a path 1
+  Net NET5
+    Pin X_XM22_XM24.DB Find a path 1
+    Pin X_XM23.S Find a path 1
+  Net A
+    Pin X_XM16.G Find a path 1
+    Pin X_XM22_XM24.GA Find a path 1
+  Net B
+    Pin X_XM22_XM24.GB Find a path 1
+    Pin X_XM13.G Find a path 1
+  Net NET2
+    Pin X_XM16.S Find a path 1
+    Pin X_XM17.S Find a path 1
+    Pin X_XM13.D Find a path 1
+    Pin X_XM14.D Find a path 1
+  Net VSS
+    Pin X_XM15.S Find a path 1
+    Pin X_XM13.S Find a path 1
+    Pin X_XM14.S Find a path 1
+  Net D
+    Pin X_XM23.G Find a path 1
+    Pin X_XM14.G Find a path 1
+  Net F
+    Pin X_XM20.G Find a path 1
+    Pin X_XM15.G Find a path 1
+  Net C
+    Pin X_XM17.G Find a path 1
+    Pin X_XM21.G Find a path 1
+Node 
