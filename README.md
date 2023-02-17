@@ -5,6 +5,7 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 ## Index
 * [Week 0](#week-0)
 * [Week 1](#week-1)
+* [Week 2](#week-2)
 
 ## Week 0
 
@@ -556,10 +557,15 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/inverter -p ../pdks/SKY130_PDK/
     * [LVS Report](#lvs-report-function-magicxschem)
 
 - [Post layout characterization using ALIGN ](#post-layout-characterization-using-align)
-    <!-- * [Pre-layout Simulation](#pre-layout-simulation-of-function-fn-using-ngspice)
-    * [Post-layout Simulation](#post-layout-simulation-of-function-fn-using-magic-and-ngspice)
-    * [Comparison of results](#comparison-of-results)
-    * [LVS Report](#lvs-report-function)
+    * [Xschem Circuit Diagram](#xschem-circuit-diagram)
+         + [Simulation](#simulation)
+    * [Pre Layout Simulation](#pre-layout-simulation-aligna)
+    * [ALIGN Generated Layout](#align-generated-layout)
+    * [ALIGN Generated Layout in Magic](#align-generated-layout-in-magic)
+    * [Magic Generated Netlist](#magic-generated-netlist)
+    * [Magic Generated Netlist without parasitic](#magic-generated-netlist-without-parasitic)
+    * [Comparison](#comparison)
+    * [LVS Report](#lvs-report-align-magic)
 <!-- - [Inverter using ALIGN](#inverter-using-align)
     * [.gds](#.gds)
     * [.lef](#.lef) --> 
@@ -760,7 +766,7 @@ XM24 net5 B VDD VDD sky130_fd_pr__pfet_01v8 L=180n W=1680n nf=2
 
 ```
 
-#### Pre Layout Simulation
+### Pre Layout Simulation ALIGN 
 For view The Full Netlist Click Here👇
 <details><summary>Netlist:</summary>
 
@@ -815,13 +821,13 @@ XM24 net5 B VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2
 ![](Resources/week1/Pre_ALIGN_NGSPICE.png)
 
 
-#### ALIGN Generated Layout
+### ALIGN Generated Layout
 ![](Resources/week1/ALIGN_FUN_GDS_LEF.png)
 
-#### ALIGN Generated Layout in Magic
+### ALIGN Generated Layout in Magic
 ![](Resources/week1/Align_Function_magic.png)
 
-#### Generated Netlist From Magic Layout
+### Generated Netlist From Magic Layout
 
 ```
 extract do local
@@ -832,7 +838,7 @@ ext2spice cthresh 0 rthresh 0
 ext2spice 
 ```
 
-#### Magic Generated Netlist
+### Magic Generated Netlist
 
 For view The Full Netlist Click Here👇
 <details><summary>Netlist</summary>
@@ -1011,7 +1017,7 @@ plot y
 </details><br>
 
 ![](Resources/week1/Function_align_sim.png)
-#### Magic Generated Netlist without parasitic
+### Magic Generated Netlist without parasitic
 
 For view The Full Netlist Click Here👇
 <details><summary>Netlist</summary>
@@ -1102,6 +1108,18 @@ plot y
 
 ![](Resources/week1/POST_ALIGN.png)
 
+
+### Comparison
+
+
+### LVS Report ALIGN MAGIC
+The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The report comp.out is obtained using Netgen.
+
+Netlists do not match.
+Cells have no pins;  pin matching not needed.
+Device classes Function_Sky130.spice and Function_Sky1302.spice are equivalent.
+
+Final result: Netlists do not match.
 
 
 #### Another ALIGN Layout
