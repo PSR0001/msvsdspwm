@@ -263,6 +263,7 @@ plot Vin Vout
 
 #### Netlist
 This inverter.spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
+<details><summary>Netlist</summary>
 
 ```
 * NGSPICE file created from inverter.ext - technology: sky130A
@@ -329,6 +330,7 @@ plot v(in) v(out)
 .endc
 
 ```
+</details>
 
 <br>
 <img src="Resources/week0/post_layout_sky130_sim.png" alt="post_layout_sky130_sim"> <br><br>
