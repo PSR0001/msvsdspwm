@@ -1017,17 +1017,124 @@ For view The Full Netlist Click Here👇
 <details><summary>Netlist</summary>
 
 ```
+* NGSPICE file created from TEST_0.ext - technology: sky130A
 
+.subckt PMOS_S_95137167_X1_Y1_1676553145_1676553145 a_200_252# a_230_399# w_0_0#
+X0 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=8.904e+11p ps=7.78e+06u w=1.68e+06u l=150000u
+X1 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+.ends
+
+.subckt NMOS_S_54129001_X1_Y1_1676553144_1676553145 a_200_252# a_230_483# a_147_483#
+X0 a_230_483# a_200_252# a_147_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
+X1 a_147_483# a_200_252# a_230_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+.ends
+
+.subckt INV_45746474_0_0_1676553145 PMOS_S_95137167_X1_Y1_1676553145_1676553145_0/w_0_0#
++ m1_398_560# li_405_1411# VSUBS
+XPMOS_S_95137167_X1_Y1_1676553145_1676553145_0 m1_398_560# li_405_1411# PMOS_S_95137167_X1_Y1_1676553145_1676553145_0/w_0_0#
++ PMOS_S_95137167_X1_Y1_1676553145_1676553145
+XNMOS_S_54129001_X1_Y1_1676553144_1676553145_0 m1_398_560# li_405_1411# VSUBS NMOS_S_54129001_X1_Y1_1676553144_1676553145
+.ends
+
+.subckt DP_PMOS_83764739_X1_Y1_1676553146 a_372_252# a_200_252# a_230_399# a_402_399#
++ w_0_0#
+X0 w_0_0# a_372_252# a_402_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=1.3608e+12p pd=1.17e+07u as=4.704e+11p ps=3.92e+06u w=1.68e+06u l=150000u
+X1 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=0p ps=0u w=1.68e+06u l=150000u
+X2 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+X3 a_402_399# a_372_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+.ends
+
+.subckt NMOS_S_54129001_X1_Y1_1676553147 a_200_252# a_230_483# a_147_483#
+X0 a_230_483# a_200_252# a_147_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
+X1 a_147_483# a_200_252# a_230_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+C0 a_230_483# a_200_252# 0.11fF
+.ends
+
+.subckt PMOS_S_95137167_X1_Y1_1676553148 a_200_252# a_230_399# w_0_0#
+X0 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=8.904e+11p ps=7.78e+06u w=1.68e+06u l=150000u
+X1 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+.ends
+
+.subckt TEST_0 F E D C B A VDD VSS Y
+XINV_45746474_0_0_1676553145_0 m1_312_224# E Y VSS INV_45746474_0_0_1676553145
+XDP_PMOS_83764739_X1_Y1_1676553146_0 li_2813_487# m1_1978_560# VDD VDD VDD DP_PMOS_83764739_X1_Y1_1676553146
+XNMOS_S_54129001_X1_Y1_1676553147_0 m1_1806_2408# Y VSS NMOS_S_54129001_X1_Y1_1676553147
+XPMOS_S_95137167_X1_Y1_1676553148_0 m1_2838_2408# m1_312_224# VDD PMOS_S_95137167_X1_Y1_1676553148
+XNMOS_S_54129001_X1_Y1_1676553147_1 m1_1978_560# Y VSS NMOS_S_54129001_X1_Y1_1676553147
+XPMOS_S_95137167_X1_Y1_1676553148_1 C m1_312_224# VDD PMOS_S_95137167_X1_Y1_1676553148
+XNMOS_S_54129001_X1_Y1_1676553147_2 F VSS VSS NMOS_S_54129001_X1_Y1_1676553147
+XNMOS_S_54129001_X1_Y1_1676553147_3 D VSS VSS NMOS_S_54129001_X1_Y1_1676553147
+XPMOS_S_95137167_X1_Y1_1676553148_2 m1_946_560# Y m1_312_224# PMOS_S_95137167_X1_Y1_1676553148
+XNMOS_S_54129001_X1_Y1_1676553147_4 B VSS VSS NMOS_S_54129001_X1_Y1_1676553147
+.ends
+
+
+Vdd VDD GND 1.8
+.save i(vdd)
+Vdd1 A GND pulse(0 1.8 0.1n 10p 10p 1n 2n)
+.save i(vdd1)
+Vdd2 B GND pulse(0 1.8 0.2n 10p 10p 1n 2n)
+.save i(vdd2)
+Vdd3 C GND pulse(0 1.8 0.3n 10p 10p 1n 2n)
+.save i(vdd3)
+Vdd4 D GND pulse(0 1.8 0.4n 10p 10p 1n 2n)
+.save i(vdd4)
+Vdd5 E GND pulse(0 1.8 0.5n 10p 10p 1n 2n)
+.save i(vdd5)
+Vdd6 F GND pulse(0 1.8 0.6n 10p 10p 1n 2n)
+.save i(vdd6)
+X1 F E D C B A VDD GND Y  TEST_0
+**** begin user architecture code
+
+
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 10p 4n
+set color0=rgb:f/f/f
+set color1=rgb:0/0/0
+plot y
+.endc
 
 ```
 
 </details><br>
 
-
 ![](Resources/week1/POST_ALIGN.png)
 
 
 
+#### Another ALIGN Layout
+For view The Full Netlist Click Here👇
+<details><summary>Netlist</summary>
+
+```
+.subckt Function_Sky130_New F E D C B A VDD VSS Y
+XM13 net2 B VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=1000n nf=2
+XM14 net2 D VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=1000n nf=2
+XM15 net1 F VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=1000n nf=2
+XM16 Y A net2 net2 sky130_fd_pr__nfet_01v8 L=150n W=1000n nf=2
+XM17 Y C net2 net2 sky130_fd_pr__nfet_01v8 L=150n W=1000n nf=2
+XM18 Y E net1 net1 sky130_fd_pr__nfet_01v8 L=150n W=1000n nf=2
+XM19 Y E net3 net3 sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2
+XM20 Y F net3 net3 sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2
+XM21 net3 C net4 net4 sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2
+XM22 net4 A VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2
+XM23 net3 D net5 net5 sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2
+XM24 net5 B VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2
+.ends Function_Sky130_New
+```
+
+</details><br>
+
+#### klayout View .gds / .lef
+
+|.gds|.lef|
+|-|-|
+|![](Resources/week1/FUN_ALIGN_GDS.png) |![](Resources/week1/FUN_ALIGN_LEF.png) |
+
+Magic View
+![](Resources/week1/Magic_1_168.png)
 
 
 
@@ -1035,6 +1142,8 @@ For view The Full Netlist Click Here👇
 
 
 
+
+![](Resources/week1/)
 ![](Resources/week1/)
 ![](Resources/week1/)
 ![](Resources/week1/)
