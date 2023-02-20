@@ -7,6 +7,75 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 * [Week 1](#week-1)
 * [Week 2](#week-2)
 
+
+For view The Full Netlist Click Here👇
+<details><summary>Folder Structure</summary>
+
+```
+├───Installation
+│   ├───Reference
+│   ├───Tools
+│   └───VM
+├───Resources
+│   ├───week0
+│   ├───week1
+│   └───week2
+├───Week 0
+│   ├───Function_Simulation
+│   │   ├───LVS
+│   │   ├───Post_Layout_Spice
+│   │   └───Pre_Layout_Spice
+│   ├───mag
+│   ├───netgen
+│   ├───Spice_Netlist
+│   │   ├───mag
+│   │   ├───netgen
+│   │   ├───Post_layout
+│   │   ├───Pre_Layout
+│   │   └───xschem
+│   └───xschem
+├───Week 1
+│   ├───Compare 10 _ 4
+│   │   ├───Post_Layout
+│   │   ├───Pre_layout
+│   │   └───work
+│   │       ├───1_topology
+│   │       ├───2_primitives
+│   │       ├───3_pnr
+│   │       │   ├───inputs
+│   │       │   └───Results
+│   │       └───LOG
+│   ├───Function_Sky130
+│   │   ├───FUN_ALIGN
+│   │   │   ├───1_topology
+│   │   │   ├───2_primitives
+│   │   │   ├───3_pnr
+│   │   │   │   ├───inputs
+│   │   │   │   └───Results
+│   │   │   └───LOG
+│   │   ├───Post_Layout
+│   │   └───Pre_layout
+│   ├───Function_W=1_L=0.15
+│   │   ├───netgen
+│   │   ├───Post_Layout
+│   │   └───Pre_layout
+│   ├───mag_1
+│   ├───mag_2
+│   ├───mag_3
+│   ├───mag_4
+│   ├───mag_5
+│   ├───mag_test
+│   ├───netgen
+│   ├───xschem
+│   └───xschem 840_1680
+└───Week 2
+
+```
+</details>
+
+
+
+
 ## Week 0
 
 ### Index
@@ -1189,22 +1258,60 @@ export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
 export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
 
 ```
+### Install OpenFASoC
+
+```
+cd
+git clone https://github.com/idea-fasoc/openfasoc
+cd openfasoc
+./dependencies.sh
+```
+
+### OpenFASOC flow for Temperature Sensor Generation
+
+To configure circuit specifications, modify the test.json specfile in the ```openfasoc/generators/temp-sense-gen/``` folder.
+
+To run the default generator, cd into ```openfasoc/generators/temp-sense-gen/``` and execute the following command:
+
+First Initialised open_pdk root
+
+```
+export PDK_ROOT=/usr/local/share/pdk
+make sky130hd_temp
+```
+
+The default circuit’s physical design generation can be divided into three parts:
+
+1. Verilog generation
+
+2. RTL-to-GDS flow (OpenROAD)
+
+3. Post-layout verification (DRC and LVS)
 
 
+### Verilog generation
 
+To run verilog generation
+```
+ make sky130hd_temp_verilog
+```
+### Synthesis
+The OpenROAD Flow starts with a flow configuration file config.mk, the chosen platform (sky130hd, for example) and the Verilog files are generated from the previous part.
 
+```
+export PDK_ROOT=/usr/local/share/pdk
+make sky130hd_temp
+```
+If will get some OpenROAD path error:
+```bash
+export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
+export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
+export PDK_ROOT=/usr/local/share/pdk
+```
+This commands are initialised OpenROAD along with open_pdks path.
 
-
-
-
-
-
-
-
-
-
-
-
+The systhesis verilog codes in
+```/openfasoc/openfasoc/generators/temp-sense-gen/flow/results/sky130hd/tempsense```
 
 
 
