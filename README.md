@@ -1298,7 +1298,7 @@ To run verilog generation
 ### Synthesis
 The OpenROAD Flow starts with a flow configuration file config.mk, the chosen platform (sky130hd, for example) and the Verilog files are generated from the previous part.
 
-```
+```bash
 export PDK_ROOT=/usr/local/share/pdk
 make sky130hd_temp
 ```
