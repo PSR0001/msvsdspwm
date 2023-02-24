@@ -1306,8 +1306,13 @@ The physical implementation of the analog blocks in the circuit is done using tw
 The gds and lef files of HEADER and SLC cells are pre-created before the start of the Generator flow.
 
 
+The layout of the HEADER cell is shown below:
 
+![HEADER_gds](https://user-images.githubusercontent.com/83899035/221089382-38108c83-cc9b-4b89-8ef3-eaaa591175a1.png)
 
+The layout of the SLC cell is shown below:
+
+![SLC_gds](https://user-images.githubusercontent.com/83899035/221089609-d6e887a6-ce08-4742-8422-e7ca80f8dfe3.png)
 
 
 ### OpenFASOC flow for Temperature Sensor Generation
@@ -1338,9 +1343,19 @@ To run verilog generation
 ```
  make sky130hd_temp_verilog
 ```
+
+The test.json file shown in the below screenshot corresponds to the temp_sense_gen.
+
+![JSON](https://user-images.githubusercontent.com/83899035/221089716-31ed727f-9367-493e-8f74-3d557eefba44.png)
+
+The generator references the model file in an iterative process until either meeting specifications or failing.
+![Terminal_openfasoc](https://user-images.githubusercontent.com/83899035/221089953-71b23b69-2116-4d78-b788-071f95bc691b.png)
+
+
 ### Synthesis
 The OpenROAD Flow starts with a flow configuration file config.mk, the chosen platform (sky130hd, for example) and the Verilog files are generated from the previous part.
 
+To Run the synthesis 
 ```bash
 export PDK_ROOT=/usr/local/share/pdk
 make sky130hd_temp
@@ -1353,29 +1368,62 @@ export PDK_ROOT=/usr/local/share/pdk
 ```
 This commands are initialised OpenROAD along with open_pdks path.
 
+The config.mk file is shown below:
+
+![config_mkv](https://user-images.githubusercontent.com/83899035/221091343-ce830642-aac8-4cca-b1e2-033844df7604.png)
+
 The systhesis verilog codes in
 ```/openfasoc/openfasoc/generators/temp-sense-gen/flow/results/sky130hd/tempsense```
 
+![synthesis_verilog_location](https://user-images.githubusercontent.com/83899035/221091142-b81e3fba-e423-4aa9-a84a-1840cb419ad5.png)
+
+
+### Floorplan
+The floorplan for the physical design is generated with OpenROAD, which requires a description of the power delivery network in pdn.cfg.
+
+The floorplan final power report is shown below:
+
+![flowplain_power](https://user-images.githubusercontent.com/83899035/221091491-a967ff2f-9260-45a6-a3e8-7368d06d0c2d.png)
+
+This temperature sensor design implements two voltage domains: one for the VDD that powers most of the circuit, and another for the VIN that powers the ring oscillator and is an output of the HEADER cells. Such voltage domains are created within the floorplan.tcl script, with the following lines of code:
+
+![floorplan_tcl](https://user-images.githubusercontent.com/83899035/221091929-3f97b256-cd0d-4dd8-b01c-6b5fdc3996d8.png)
+
+### Placement
+Placement takes place after the floorplan is ready and has two phases: global placement and detailed placement. The output of this phase will have all instances placed in their corresponding voltage domain, ready for routing.
+
+
+###  Routing
+Routing is also divided into two phases: global routing and detailed routing. Right before global routing, OpenFASoC calls ```/openfasoc/openfasoc/generators/temp-sense-gen/flow/scripts/openfasocpre_global_route.tcl```:
+
+![pre_domain_tcl](https://user-images.githubusercontent.com/83899035/221092843-4395171b-0f47-41d8-8c36-82fef9d8afa2.png)
+
+
+Power Delivery Network:
+
+![pdn_report](https://user-images.githubusercontent.com/83899035/221093053-c9886ff7-463f-437f-b986-2df92968dd6c.png)
+
+
+
+### Final Layout after Routing
+
+![temp_sensor](https://user-images.githubusercontent.com/83899035/221093313-2729e76e-353e-4a92-ba8b-9869f705afc0.png)
+![synthesis_terminal](https://user-images.githubusercontent.com/83899035/221093850-a35d9a6b-dd49-43d8-a532-55805ba5937b.png)
+
+
+## Jupyter NoteBook Temperature Sensor
+
+[![Build Status](https://img.shields.io/badge/NoteBook-open_in_GitHub-blue)](/Week%202/Temperature_Sensor_Google_Collab/OpenFASoC.ipynb)
+<a href="" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+### Generator Flow images
+![google_collab_1](https://user-images.githubusercontent.com/83899035/221100508-0c2f45a5-e6f3-4b60-96e3-1d6e1cdf80df.png)
+![google_collab_2](https://user-images.githubusercontent.com/83899035/221100513-6e091ca4-ebbf-4405-a7bc-86d0e1908279.png)
+![google_collab_3](https://user-images.githubusercontent.com/83899035/221100517-629dd597-dccf-46ab-8c92-c2a9c5b80f56.png)
+![google_collab_4](https://user-images.githubusercontent.com/83899035/221100523-ed3733f0-2b64-4149-8e6f-7edd8c1ebafc.png)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
