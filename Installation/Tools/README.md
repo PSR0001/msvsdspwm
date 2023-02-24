@@ -6,10 +6,25 @@ To adequately utilize the open source skywater130 pdk, we first require to insta
 - [ngspice](#ngspice)
 - [open_pdk](#open_pdk)
 - [ALIGN Tools](#installing-align)
+- [OpeenROAD](#openroad-installation)
+- [OpenFASoC](#install-openfasoc)
 
 ### Magic
 Magic is an open-source VLSI layout tool.<br /><br />
+
 Install steps:
+
+```
+$ sudo apt-get install m4
+$ sudo apt-get install tcsh
+$ sudo apt-get install csh
+$ sudo apt-get install libx11-dev
+$ sudo apt-get install tcl-dev tk-dev
+$ sudo apt-get install libcairo2-dev
+$ sudo apt-get install mesa-common-dev libglu1-mesa-dev
+$ sudo apt-get install libncurses-dev
+```
+
 ```
 $  git clone git://opencircuitdesign.com/magic
 $  cd magic
@@ -172,7 +187,46 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/
 
 
 
+### OpenRoad Installation
+OpenROAD is an integrated chip physical design tool that takes a design from synthesized Verilog to routed layout.
 
+An outline of steps used to build a chip using OpenROAD is shown below:
+
+1. Initialize floorplan - define the chip size and cell rows
+2. Place pins (for designs without pads )
+3. Place macro cells (RAMs, embedded macros)
+4. Insert substrate tap cells
+5. Insert power distribution network
+6. Macro Placement of macro cells
+7. Global placement of standard cells
+8. Repair max slew, max capacitance, and max fanout violations and long wires
+9. Clock tree synthesis
+10. Optimize setup/hold timing
+11. Insert fill cells
+12. Global routing (route guides for detailed routing)
+13. Antenna repair
+14. Detailed routing
+15. Parasitic extraction
+16. Static timing analysis
+
+Before Installing openROAD lemon needs to be instal First
+https://lemon.cs.elte.hu/trac/lemon/wiki/Downloads
+
+Run the below commands step-by-step
+```bash
+cd
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
+cd OpenROAD
+./etc/DependencyInstaller.sh
+cd
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+cd OpenROAD-flow-scripts
+./build_openroad.sh –local
+export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
+export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-scripts/tools/install/yosys/bin:~/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
+
+```
+### Install OpenFASoC
 
 
 
