@@ -1,4 +1,7 @@
 # VSD-Mixed-Signal-PD-Research
+
+
+
 This repository contains the documentation of the work done during a 10 Weeks VSD-Mixed-Signal-PD-Research carried out by VSD.
 
 
@@ -69,14 +72,12 @@ For view The Full Folder Structure Here👇
 │   ├───xschem
 │   └───xschem 840_1680
 └───Week 2
-
+    └───Temperature_Sensor_Google_Collab
 ```
 </details>
 
 
-
-
-## Week 0
+# Week 0
 
 ### Index
 - [Installing Requires Tools](#installing-requires-tools)
@@ -653,7 +654,7 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/inverter -p ../pdks/SKY130_PDK/
 
 
 
-## Week 1
+# Week 1
 
 ### Index
 - [Installing Requires Tools](#installing-requires-tools)
@@ -1282,7 +1283,7 @@ Magic View
 
 
 
-## Week 2
+# Week 2
 ## Index
 - [OpenRoad Installation](#openroad-installation)
 - [Install OpenFASoC](#install-openfasoc)
@@ -1471,10 +1472,17 @@ Power Delivery Network:
 ![synthesis_terminal](https://user-images.githubusercontent.com/83899035/221093850-a35d9a6b-dd49-43d8-a532-55805ba5937b.png)
 
 
+
+
+
 ## Jupyter NoteBook Temperature Sensor
 
 [![Build Status](https://img.shields.io/badge/NoteBook-open_in_GitHub-blue)](/Week%202/Temperature_Sensor_Google_Collab/OpenFASoC.ipynb)
 <a href="" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+See NoteBook [here](/Week%202/Temperature_Sensor_Google_Collab/OpenFASoC.ipynb)
+
+
 
 ### Generator Flow images
 ![google_collab_1](https://user-images.githubusercontent.com/83899035/221100508-0c2f45a5-e6f3-4b60-96e3-1d6e1cdf80df.png)
