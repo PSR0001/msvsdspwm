@@ -8,7 +8,7 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 * [Week 2](#week-2)
 
 
-For view The Full Netlist Click Here👇
+For view The Full Folder Structure Here👇
 <details><summary>Folder Structure</summary>
 
 ```
@@ -124,13 +124,19 @@ An initial schematic is made by placing components from the open_pdk library.
 
 The required changes to the properties of the device can be made here and will automatically reflect in the layout
 
-![xschem_inv](Resources/week0/xschem_inverter.png)<br /><br />
+<!-- ![xschem_inv](Resources/week0/xschem_inverter.png)<br /><br /> -->
+![xschem_inverter](https://user-images.githubusercontent.com/83899035/221107908-1361e7f9-abf2-42f9-88ad-c42d01cea696.png)
 Convert the schematic to a symbol
 
-![xschem_sym](Resources/week0/xschem_sym.png)<br /><br />
+<!-- ![xschem_sym](Resources/week0/xschem_sym.png)<br /><br /> -->
+![xschem_sym](https://user-images.githubusercontent.com/83899035/221107920-087ba433-a313-4d95-95bb-cfe3b26cc66a.png)
+
+
 Using the symbol, we can create an independent test bench to simulate the circuit
 
-![xshem_inverter_tb](Resources/week0/xschem_inverter_tb.png)<br /><br />
+<!-- ![xshem_inverter_tb](Resources/week0/xschem_inverter_tb.png) -->
+![xschem_inverter_tb](https://user-images.githubusercontent.com/83899035/221107912-b7403da6-ddc0-4847-a792-6a56d68ff47a.png)
+<br /><br />
 
 ## Pre-Layout Simulation
 
@@ -183,13 +189,15 @@ XM3 vout vin vdd VDD sky130_fd_pr__pfet_01v8 L=0.15 W=3 nf=3 ad='int((nf+1)/2) *
 
 
 
-![xschem_sim](Resources/week0/xschem_simulation.png)
-
+<!-- ![xschem_sim](Resources/week0/xschem_simulation.png) -->
+![xschem_simulation](https://user-images.githubusercontent.com/83899035/221107914-87415198-21c5-43b8-893c-20343c74966c.png)
 
 ## Post-Layout Simulation
 Inverter Layout Using Magic
 
-<img src="Resources/week0/layout_magic.png" height=800 alt="layout_magic">
+<!-- <img src="Resources/week0/layout_magic.png" height=800 alt="layout_magic"> -->
+
+![layout_magic](https://user-images.githubusercontent.com/83899035/221107876-5c861cf8-ea49-4605-83b8-216a6cc28e0d.png)
 
 Extract Command from magic to ngspice
 ```
@@ -237,7 +245,9 @@ X1 vout vin vdd vdd sky130_fd_pr__pfet_01v8 ad=5.5e+11p pd=3.1e+06u as=5.5e+11p 
 .ends
 
 ```
-<img src="Resources/week0/post_layout.png" alt="post_layout" >
+<!-- <img src="Resources/week0/post_layout.png" alt="post_layout" > -->
+
+![post_layout](https://user-images.githubusercontent.com/83899035/221107879-40819e25-6211-41cc-a48d-1f7597b3a50f.png)
 
 
 ### Comparison of Pre-layout and Post-layout timing parameters for inverter.
@@ -284,7 +294,10 @@ Final result: Circuits match uniquely.
 ## Circuit Simulation From Spice 
 
 ### Pre-layout Circuit 
-<img src="Resources/week0/inverter_sch_2.png">
+<!-- <img src="Resources/week0/inverter_sch_2.png"> -->
+
+![inverter_sch_2](https://user-images.githubusercontent.com/83899035/221107871-66d4db7c-3a07-4c2b-9497-f454c82868c7.png)
+
 <br>
 
 #### Netlist
@@ -324,12 +337,21 @@ plot Vin Vout
 .end
 ```
 #### Simulation
-<img src="Resources/week0/inverter_sch_spice_2.png" alt="">
+<!-- <img src="Resources/week0/inverter_sch_spice_2.png" alt=""> -->
+
+![inverter_sch_spice_2](https://user-images.githubusercontent.com/83899035/221107873-7eacfb1e-65e9-4e9c-ab57-9918792983b5.png)
 <br>
 
 ### Post Layout 
 
-<img src="Resources/week0/post_layout_sky130_magic.png" alt="post_layout_sky130_magic">
+<!-- <img src="Resources/week0/post_layout_sky130_magic.png" alt="post_layout_sky130_magic"> -->
+
+![post_layout_sky130_magic](https://user-images.githubusercontent.com/83899035/221107886-e01aac96-5463-4fcf-bd9c-244fcbcf2bfa.png)
+<br>
+
+![inverter_post_layout](https://user-images.githubusercontent.com/83899035/221107867-cfa68680-a186-43c3-b43f-9bf18d77fd85.png)
+
+
 
 #### Netlist
 This inverter.spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
@@ -405,8 +427,16 @@ plot v(in) v(out)
 </details>
 
 <br>
-<img src="Resources/week0/post_layout_sky130_sim.png" alt="post_layout_sky130_sim"> <br><br>
-<img src="Resources/week0/post_layout_sky130.png" alt="post_layout_sky130"> <br><br>
+<!-- <img src="Resources/week0/post_layout_sky130_sim.png" alt="post_layout_sky130_sim"> -->
+
+![post_layout_sky130_sim](https://user-images.githubusercontent.com/83899035/221107896-51a7bf9c-6ac3-4759-8fc5-9945d4a94e96.png)
+ <br><br>
+
+
+<!-- <img src="Resources/week0/post_layout_sky130.png" alt="post_layout_sky130">  -->
+
+![post_layout_sky130](https://user-images.githubusercontent.com/83899035/221107881-c53e0c9c-e220-4e51-9f26-bc232e7103f6.png)
+<br><br>
 
 ### LVS Report Spice Netlist Magic
 The layout vs schematic compares the pre-layout netlist with the netlist extracted from the layout. The mismatch is due to the extra parasitic capacitances in the post-layout netlist. The report `comp.out` is obtained using Netgen by typing the following command.
@@ -431,7 +461,10 @@ Final result: Netlists do not match.
 
 
 ## Simulation of a function using Magic and Ngspice
-<img src="Resources/week0/function.png" alt="function"  >
+<!-- <img src="Resources/week0/function.png" alt="function"  ><br> -->
+
+![function](https://user-images.githubusercontent.com/83899035/221107924-8ecbec98-39f0-4528-950d-8ffdf8c70aeb.png)
+
 
 
 ### Pre-layout Simulation of function Fn using Ngspice
@@ -484,13 +517,17 @@ Run the ngspice simulation using the following commands.
     ngspice 2 -> run
     ngspice 3 -> plot out
 ```
+![function_pre](https://user-images.githubusercontent.com/83899035/221107838-2e662d28-c55a-431a-a257-71b24d59ce38.png)
 
 
-<img src="Resources/week0/function_pre.png" alt="function_pre"  >
+<!-- <img src="Resources/week0/function_pre.png" alt="function_pre"  > -->
 
 ### Post-layout Simulation of function Fn using Magic and Ngspice
 
-<img src="Resources/week0/Fn_mag.png" alt="function"  ><br>
+<!-- <img src="Resources/week0/Fn_mag.png" alt="function"  ><br> -->
+
+![Fn_mag](https://user-images.githubusercontent.com/83899035/221107797-49cdb8a2-6a2c-4e50-a88d-c6d111d97ae2.png)
+
 
 The netlist fn_postlayout.spice generated is as shown. The netlist shows the parasitic capacitances also. Model file is same as the one used for pre-layout simulation.
 
@@ -559,7 +596,10 @@ Run the ngspice simulation using the following commands.
     ngspice 3 -> plot out
 ```
 
-<img src="Resources/week0/function_post.png" alt="function_post"  >
+<!-- <img src="Resources/week0/function_post.png" alt="function_post"  > -->
+
+![function_post](https://user-images.githubusercontent.com/83899035/221107829-8ee1ca56-29a1-45b2-b47c-6e7a20dd81eb.png)
+
 
 ### Comparison of results
 We can note that the graph of out vs time for both pre-layout simulation and post layout simulation are similar.
@@ -598,11 +638,17 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/inverter -p ../pdks/SKY130_PDK/
 
 
 - ### .gds
-![inverter_gds](Resources/week0/inverter_gds.png)
+<!-- ![inverter_gds](Resources/week0/inverter_gds.png) -->
+
+![inverter_gds](https://user-images.githubusercontent.com/83899035/221107851-0f6aa514-ebe7-4482-89d3-a7b372ea794a.png)
+
 <br><br>
 
 - ### .lef
-![inverter_lef](Resources/week0/inverter_lef.png)
+<!-- ![inverter_lef](Resources/week0/inverter_lef.png) -->
+
+![inverter_lef](https://user-images.githubusercontent.com/83899035/221107862-89157947-b75c-4aa7-8d61-38d824b983ad.png)
+
 <br><br>
 
 
@@ -672,7 +718,10 @@ ngspice INV.sp
 ```
 Simulation
 
-![Inveter pre layout](Resources/week1/pre_layout.png)
+<!-- ![Inveter pre layout](Resources/week1/pre_layout.png) -->
+![pre_layout](https://user-images.githubusercontent.com/83899035/221107902-936dc399-9247-40ea-b790-e66652d7e25b.png)
+
+
 
 ### Inverter Post-layout From ALIGN
 netlist generated by magic
