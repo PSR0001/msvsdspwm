@@ -1240,6 +1240,26 @@ Magic View
 
 
 ### OpenRoad Installation
+OpenROAD is an integrated chip physical design tool that takes a design from synthesized Verilog to routed layout.
+
+An outline of steps used to build a chip using OpenROAD is shown below:
+
+1. Initialize floorplan - define the chip size and cell rows
+2. Place pins (for designs without pads )
+3. Place macro cells (RAMs, embedded macros)
+4. Insert substrate tap cells
+5. Insert power distribution network
+6. Macro Placement of macro cells
+7. Global placement of standard cells
+8. Repair max slew, max capacitance, and max fanout violations and long wires
+9. Clock tree synthesis
+10. Optimize setup/hold timing
+11. Insert fill cells
+12. Global routing (route guides for detailed routing)
+13. Antenna repair
+14. Detailed routing
+15. Parasitic extraction
+16. Static timing analysis
 
 Before Installing openROAD lemon needs to be instal First
 https://lemon.cs.elte.hu/trac/lemon/wiki/Downloads
@@ -1259,13 +1279,36 @@ export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-s
 
 ```
 ### Install OpenFASoC
-
+To install the OpenFASoC use the following commands
 ```
 cd
 git clone https://github.com/idea-fasoc/openfasoc
 cd openfasoc
 ./dependencies.sh
 ```
+
+## Temperature Sensor Auxiliary Cells
+An overview of how the Temperature Sensor Generator (temp-sense-gen) works internally in OpenFASoC
+
+### Circuit
+This generator creates a compact mixed-signal temperature sensor based on the topology from this paper. It consists of a ring oscillator whose frequency is controlled by the voltage drop over a MOSFET operating in subthreshold regime, where its dependency on temperature is exponential.
+
+<p align="center">
+  <img width="1000" height="500" src="https://user-images.githubusercontent.com/110079890/200105228-1ba0d839-3f1a-482f-9889-bb2cd1eb5048.png">
+</p>
+
+The physical implementation of the analog blocks in the circuit is done using two manually designed standard cells:
+
+1. HEADER cell, containing the transistors in subthreshold operation;
+
+2. SLC cell, containing the Split-Control Level Converter.
+
+The gds and lef files of HEADER and SLC cells are pre-created before the start of the Generator flow.
+
+
+
+
+
 
 ### OpenFASOC flow for Temperature Sensor Generation
 
@@ -1312,6 +1355,27 @@ This commands are initialised OpenROAD along with open_pdks path.
 
 The systhesis verilog codes in
 ```/openfasoc/openfasoc/generators/temp-sense-gen/flow/results/sky130hd/tempsense```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

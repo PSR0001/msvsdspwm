@@ -10,7 +10,7 @@
 - [Modify Python Script ALIGN Tool](https://1drv.ms/v/s!Ai4WW_jutenghoM4JLbwC4_BBz3e3g?e=dq553l)
 - [ALIGN Flow](https://docs.google.com/document/d/1RldOLssqc29qNuLmmlAmxlnkeW40NMr4uQ9kXzd2MMI/edit?usp=sharing)
 - [https://lootr5858.wordpress.com/2020/10/06/magic-vlsi-skywater-pdk-local-installation-guide/](https://lootr5858.wordpress.com/2020/10/06/magic-vlsi-skywater-pdk-local-installation-guide/)
-- []()
+- [OpenFASoC](https://openfasoc.readthedocs.io/)
 - []()
 - []()
 - []()
