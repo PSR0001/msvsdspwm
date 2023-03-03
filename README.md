@@ -1495,3 +1495,238 @@ See NoteBook [here](/Week%202/Temperature_Sensor_Google_Collab/OpenFASoC.ipynb)
 
    
 
+
+# Week 3
+
+## Index
+
+
+
+## Pre-Layout
+
+### Prelayout Circuit in Xschem
+
+#### With capacitor
+![input_pre_11](https://user-images.githubusercontent.com/83899035/222737680-ebfff4bf-a8a5-4d91-b0fa-21a595e668b8.png)
+
+#### Subcircuit Wrapper
+
+![input_pre_1](https://user-images.githubusercontent.com/83899035/222737668-fb8c9c1f-bb77-40ca-9be7-226e228c1b43.png)
+
+#### Simulation
+
+For view The Full Netlist Here👇
+<details><summary>Netlist</summary>
+
+```
+** sch_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog_tb.sch
+**.subckt analog_tb
+X1 VN VP Y analog
+V1 VP VN 1.8
+.save i(v1)
+**** begin user architecture code
+
+
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1u 0.001
+plot v(y)
+.endc
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  analog.sym # of pins=3
+** sym_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog.sym
+** sch_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog.sch
+.subckt analog VN VP Y
+*.iopin VP
+*.iopin VN
+*.opin Y
+XM2 net1 Y VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net2 net1 VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y net2 VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 Y VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net2 net1 VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XC1 net1 VN sky130_fd_pr__cap_mim_m3_1 W=1000 L=1000 MF=1 m=1
+XC2 net2 VN sky130_fd_pr__cap_mim_m3_1 W=1000 L=1000 MF=1 m=1
+XC3 Y VN sky130_fd_pr__cap_mim_m3_1 W=1000 L=1000 MF=1 m=1
+.ends
+
+.end
+```
+</details>
+<br>
+
+![input_pre](https://user-images.githubusercontent.com/83899035/222737696-6f35ff26-fd02-45dc-9044-75515e1c2159.png)
+
+#### Without Capacitor
+![without_cap_sch](https://user-images.githubusercontent.com/83899035/222740142-ae802bc1-6410-44f5-9f61-11f0b33765a6.png)
+
+#### Simulation Without Capacitor
+
+For view The Full Netlist Here👇
+<details><summary>Netlist</summary>
+
+```
+** sch_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog_tb.sch
+**.subckt analog_tb
+X1 VN VP Y analog
+V1 VP VN 1.8
+.save i(v1)
+**** begin user architecture code
+
+
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1u 0.001
+plot v(y)
+.endc
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  analog.sym # of pins=3
+** sym_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog.sym
+** sch_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog.sch
+.subckt analog VN VP Y
+*.iopin VP
+*.iopin VN
+*.opin Y
+XM2 net1 Y VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net2 net1 VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y net2 VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM4 net1 Y VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM5 net2 net1 VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end
+```
+</details>
+<br>
+
+![whithout caps](https://user-images.githubusercontent.com/83899035/222738333-30a29cb5-abf9-4929-bf20-abc3c3d34443.png)
+
+### ALIGN FLOW
+
+Six CMOS Netlist with Capacitor
+```
+.subckt analog VN VP Y
+M2 net1 Y VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
+M1 net2 net1 VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
+M3 Y net2 VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
+M4 net1 Y VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+M5 net2 net1 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+M6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+C1 net1 VN sky130_fd_pr__cap_mim_m3_1 W=10000e-9 L=10000e-9 m=1
+C2 net2 VN sky130_fd_pr__cap_mim_m3_1 W=10000e-9 L=10000e-9 m=1
+C3 Y VN sky130_fd_pr__cap_mim_m3_1 W=10000e-9 L=10000e-9 m=1
+.ends
+```
+#### Generate GDS and LEF file Using ALIGN
+ALIGN Command
+```
+cd 
+cd ALIGN-public
+mkdir work
+source general/bin/activate
+cd work
+```
+```
+schematic2layout.py ../ALIGN-pdk-sky130/examples/analog -p ../pdks/SKY130_PDK/
+```
+#### ALIGN Generated Layout (Klayout view)
+
+|.gds|.lef|
+|---|---|
+|![gds_840_420](https://user-images.githubusercontent.com/83899035/222738345-20639c42-d598-41e3-a141-5abe721d764f.png)|![lef_840_420](https://user-images.githubusercontent.com/83899035/222744699-ae6563f5-de37-477c-9e38-cab02abeb0cd.png)|
+
+#### Restriction Use Capacitor in ALIGN
+
+![restriction_caps_align](https://user-images.githubusercontent.com/83899035/222746683-35e324af-5517-43a9-80b5-39f370ac409c.png)
+
+So going with wihout Capacitor
+
+Six CMOS Netlist without Capacitor
+```
+.subckt analog VN VP Y
+M2 net1 Y VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
+M1 net2 net1 VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
+M3 Y net2 VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
+M4 net1 Y VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+M5 net2 net1 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+M6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+.ends
+```
+#### ALIGN Generated Layout (Klayout view)
+
+|.gds|.lef|
+|---|---|
+|![gds_840_1680_without_cap](https://user-images.githubusercontent.com/83899035/222746029-b4ff7aae-6895-4625-864b-71a82ed5d8ce.png)|![lef_840_1680_without_cap](https://user-images.githubusercontent.com/83899035/222746038-6b548124-826c-4eba-98c3-2e285b53c7a5.png)|
+
+#### Magic View
+
+![magic_without_caps](https://user-images.githubusercontent.com/83899035/222747739-23942fc5-d21a-473c-a90f-efbfa83eba00.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|.gds|.lef|
+|-|-|
+|| |
+
+For view The Full Netlist Here👇
+<details><summary>Netlist</summary>
+
+```
+
+```
+</details>
+<br>

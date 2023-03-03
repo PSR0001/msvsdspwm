@@ -93,18 +93,18 @@ $  sudo make install
 #### Verifiying the open_pdk installation
 An initial working directory can be made by copying the required files as follows:
 ```
-$ mkdir Week0
-$ cd Week0
-$ mkdir mag
-$ mkdir netgen
-$ mkdir xschem
-$ cd xschem
-$ cp /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc .
-$ cp /usr/local/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
-$ cd ../mag
-$ cp /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
-$ cd ../netgen
-$ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
+ mkdir Week0
+ cd Week0
+ mkdir mag
+ mkdir netgen
+ mkdir xschem
+ cd xschem
+ cp /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc .
+ cp /usr/local/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
+ cd ../mag
+ cp /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+ cd ../netgen
+ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 ```
 
 
