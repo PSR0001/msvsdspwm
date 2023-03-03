@@ -1,0 +1,8 @@
+{
+    "module_name": "WEEK4",
+    "generator": "week4",
+    "specifications": {
+    	"frequency": { "min": 5, "max": 12 },
+    	"model" :"modelfile.csv"
+	}
+}

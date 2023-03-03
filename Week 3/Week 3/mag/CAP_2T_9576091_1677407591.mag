@@ -1,0 +1,31 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1677423745
+<< metal3 >>
+rect 53 928 463 1088
+rect 342 734 432 928
+rect 172 474 432 734
+rect 342 464 432 474
+rect 53 284 463 332
+rect 53 220 230 284
+rect 294 220 463 284
+rect 53 172 463 220
+<< via3 >>
+rect 230 220 294 284
+<< mimcap >>
+rect 202 616 402 704
+rect 202 552 230 616
+rect 294 552 402 616
+rect 202 504 402 552
+<< mimcapcontact >>
+rect 230 552 294 616
+<< metal4 >>
+rect 217 616 307 670
+rect 217 552 230 616
+rect 294 552 307 616
+rect 217 284 307 552
+rect 217 220 230 284
+rect 294 220 307 284
+rect 217 166 307 220
+<< end >>
