@@ -1669,6 +1669,14 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/analog -p ../pdks/SKY130_PDK/
 |---|---|
 |![gds_840_420](https://user-images.githubusercontent.com/83899035/222738345-20639c42-d598-41e3-a141-5abe721d764f.png)|![lef_840_420](https://user-images.githubusercontent.com/83899035/222744699-ae6563f5-de37-477c-9e38-cab02abeb0cd.png)|
 
+#### ALIGN Generated Layout with W=100 L=100 capacitor (magic view)
+![magic_100caps_align](https://user-images.githubusercontent.com/83899035/222761590-93b81957-a43a-4ef0-83e1-7447b1c663d7.png)
+
+#### magic generated netlist simulation with caps
+
+![magic_100caps_align_sim](https://user-images.githubusercontent.com/83899035/222761980-9c4c38b0-18e0-47c7-a0d9-fc0adca8711b.png)
+
+
 #### Restriction Use Capacitor in ALIGN
 
 ![restriction_caps_align](https://user-images.githubusercontent.com/83899035/222746683-35e324af-5517-43a9-80b5-39f370ac409c.png)
@@ -1696,28 +1704,212 @@ M6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
 
 ![magic_without_caps](https://user-images.githubusercontent.com/83899035/222747739-23942fc5-d21a-473c-a90f-efbfa83eba00.png)
 
+#### Magic Generated Netlist 
+Commands For generating Netlist
+
+```bash
+extract do local 
+extract all
+ext2spice lvs
+ext2spice cthresh 0 rthresh 0
+#matching port automatically
+readspice <location_prelayout_spice_netlist>
+ext2spice
+```
+
+Spice Netlist
+For view The Full Netlist Here👇
+<details><summary>Netlist</summary>
+
+```
+* NGSPICE file created from ANALOG_0.ext - technology: sky130A
+
+.subckt NMOS_S_25628869_X1_Y1_1677466711_1677466713 a_200_252# a_230_483# a_147_483#
+X0 a_230_483# a_200_252# a_147_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
+X1 a_147_483# a_200_252# a_230_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+C0 a_200_252# a_230_483# 0.11fF
+C1 a_230_483# a_147_483# 0.74fF
+C2 a_200_252# a_147_483# 0.89fF
+.ends
+
+.subckt PMOS_S_89421238_X1_Y1_1677466712_1677466713 a_200_252# a_230_399# w_0_0# VSUBS
+X0 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=8.904e+11p ps=7.78e+06u w=1.68e+06u l=150000u
+X1 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+C0 a_230_399# w_0_0# 0.78fF
+C1 w_0_0# a_200_252# 0.66fF
+C2 a_230_399# a_200_252# 0.10fF
+C3 a_230_399# VSUBS -0.03fF
+C4 a_200_252# VSUBS 0.06fF
+C5 w_0_0# VSUBS 2.97fF
+.ends
+
+.subckt STAGE2_INV_27873531_PG0_0_0_1677466713 li_405_1411# PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0#
++ m1_742_560# li_405_571# VSUBS
+XNMOS_S_25628869_X1_Y1_1677466711_1677466713_0 li_405_571# li_405_1411# VSUBS NMOS_S_25628869_X1_Y1_1677466711_1677466713
+XNMOS_S_25628869_X1_Y1_1677466711_1677466713_1 m1_742_560# li_405_571# VSUBS NMOS_S_25628869_X1_Y1_1677466711_1677466713
+XPMOS_S_89421238_X1_Y1_1677466712_1677466713_0 li_405_571# li_405_1411# PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0#
++ VSUBS PMOS_S_89421238_X1_Y1_1677466712_1677466713
+XPMOS_S_89421238_X1_Y1_1677466712_1677466713_1 m1_742_560# li_405_571# PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0#
++ VSUBS PMOS_S_89421238_X1_Y1_1677466712_1677466713
+C0 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# li_405_571# 0.92fF
+C1 li_405_1411# m1_742_560# 0.02fF
+C2 m1_742_560# li_405_571# 0.38fF
+C3 li_405_1411# li_405_571# 0.11fF
+C4 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# m1_742_560# 0.71fF
+C5 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# li_405_1411# 0.10fF
+C6 li_405_571# VSUBS 0.90fF
+C7 m1_742_560# VSUBS 0.93fF
+C8 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# VSUBS 5.04fF
+C9 li_405_1411# VSUBS 0.59fF
+.ends
+
+.subckt PMOS_S_89421238_X1_Y1_1677466712_1677466712 a_200_252# a_230_399# w_0_0# VSUBS
+X0 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=8.904e+11p ps=7.78e+06u w=1.68e+06u l=150000u
+X1 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
+C0 a_230_399# a_200_252# 0.10fF
+C1 w_0_0# a_230_399# 0.78fF
+C2 w_0_0# a_200_252# 0.66fF
+C3 a_230_399# VSUBS -0.03fF
+C4 a_200_252# VSUBS 0.06fF
+C5 w_0_0# VSUBS 2.97fF
+.ends
+
+.subckt NMOS_S_25628869_X1_Y1_1677466711_1677466712 a_200_252# a_230_483# a_147_483#
+X0 a_230_483# a_200_252# a_147_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
+X1 a_147_483# a_200_252# a_230_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
+C0 a_200_252# a_230_483# 0.11fF
+C1 a_230_483# a_147_483# 0.74fF
+C2 a_200_252# a_147_483# 0.89fF
+.ends
+
+.subckt INV_21850877_PG0_0_0_1677466712 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0#
++ li_61_1411# m1_226_560# VSUBS
+XPMOS_S_89421238_X1_Y1_1677466712_1677466712_0 m1_226_560# li_61_1411# PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0#
++ VSUBS PMOS_S_89421238_X1_Y1_1677466712_1677466712
+XNMOS_S_25628869_X1_Y1_1677466711_1677466712_0 m1_226_560# li_61_1411# VSUBS NMOS_S_25628869_X1_Y1_1677466711_1677466712
+C0 li_61_1411# m1_226_560# 0.14fF
+C1 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0# li_61_1411# 0.02fF
+C2 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0# m1_226_560# 0.55fF
+C3 li_61_1411# VSUBS 0.69fF
+C4 m1_226_560# VSUBS 1.33fF
+C5 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0# VSUBS 3.02fF
+.ends
+
+.subckt ANALOG_0 VN VP Y
+XSTAGE2_INV_27873531_PG0_0_0_1677466713_0 li_1093_1495# VN Y STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571#
++ VP STAGE2_INV_27873531_PG0_0_0_1677466713
+XINV_21850877_PG0_0_0_1677466712_0 VN Y li_1093_1495# VP INV_21850877_PG0_0_0_1677466712
+C0 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# VN 0.33fF
+C1 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# Y 0.09fF
+C2 Y VN 0.58fF
+C3 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# li_1093_1495# 0.20fF
+C4 VN li_1093_1495# 0.82fF
+C5 Y li_1093_1495# 0.34fF
+C6 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# VP 0.70fF
+C7 Y VP 1.01fF
+C8 VN VP 12.10fF
+C9 li_1093_1495# VP 2.20fF
+.ends
+
+*added manually for simulation
+X1 VN VP Y ANALOG_0
+V1 VP VN 1.8
+.save i(v1)
+
+.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
+.control
+save all
+tran 1u 0.001
+plot v(y)
+.endc
+
+.end
+```
+</details>
+<br>
+
+#### Simulation 
+![without_caps_sim_magic](https://user-images.githubusercontent.com/83899035/222760095-c09084ee-f4b7-400d-a2af-1baf620d2059.png)
+
+#### Result 
+Did not match with prelayout Simulation.
+
+#### Magic View with Capacitor
+This capacitors are manually added with magic layout tool.
+![madic_with_hand_cap](https://user-images.githubusercontent.com/83899035/222767409-f871b114-9861-4411-8afb-e30a25b93826.png)
+
+Spice Simulation
+![with_caps_magic_hand](https://user-images.githubusercontent.com/83899035/222773691-908288fc-7a2b-4d0a-b36a-c3a7ee180552.png)
 
 
 
+## OpenROAD Flow # OpenFASoC
+
+makefile
+```make
+
+# ==============================================================================
+# Run week 4 design
+# ==============================================================================
 
 
 
+sky130hd_week4_verilog:
+	python3 tools/week4.py --specfile test.json --outputDir ./work --platform sky130hd --mode verilog
+
+sky130hd_week4:
+	python3.8 tools/week4.py --specfile test.json --outputDir ./work --platform sky130hd --mode macro
+sky130hd_week4_full:
+	# add --pex to also run pex simulations
+	python3 tools/week4.py --specfile test.json --outputDir ./work --platform sky130hd --mode full --prepex
+
+clean:
+	rm -f search_result.csv
+	rm -rf work
+	rm -rf tools/*.pyc tools/__pycache__/
+	cd flow && make clean_all
+	cd simulations && rm -rf run
+
+banner:
+	@@echo "=============================================================="
+	@@echo "   ___  _____ ______ _   _ _____  _     ____   ___   ____"
+	@@echo "  / _ \|  _  \| ____| \ | |  ___|/ \   / ___| / _ \ / ___|"
+	@@echo " | | | | |_) ||  _| |  \| | |_  / _ \  \___ \| | | | |    "
+	@@echo " | |_| |  __/ | |___| |\  |  _|/ ___ \  ___) | |_| | |___ "
+	@@echo "  \___/|_|    |_____|_| \_|_| /_/   \_\|____/ \___/ \____|"
+	@@echo ""
+	@@echo "==============================================================="
+
+```
+
+week4.py code
+![python_code_for_verilog](https://user-images.githubusercontent.com/83899035/222782630-a55a3fd9-8d77-4765-b054-a71c153da7b9.png)
+
+Dummy Verilog Code for ring oscillator
+```python
+module ANALOG( input VN, input VY, output reg Y);    
+@@ @np dummy verilog code
+
+endmodule
+```
+
+|.gds location|.lef location|
+|-|-|
+|![GDS_locations](https://user-images.githubusercontent.com/83899035/222787838-fc27124e-f1b0-4084-9f27-c49a15269350.png)| ![LEF_locations](https://user-images.githubusercontent.com/83899035/222787947-c5d2fbcd-4c58-42ad-ba78-e8c0b8fed5b4.png)|
+
+### Verilog Generation Python Code
+```bash
+export PDK_ROOT=/usr/local/share/pdk
+make sky130hd_week4_verilog
+
+```
+
+![verilog_generation](https://user-images.githubusercontent.com/83899035/222790630-04a36b3e-4887-4d78-8a3e-ba69698f0631.png)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Due to my Practical Exam I am unable to work past 3days I just completed Verilog generation Part only, Thank You.
+<!-- 
 |.gds|.lef|
 |-|-|
 || |
@@ -1729,4 +1921,4 @@ For view The Full Netlist Here👇
 
 ```
 </details>
-<br>
+<br> -->
