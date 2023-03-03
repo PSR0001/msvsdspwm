@@ -9,7 +9,7 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 * [Week 0](#week-0)
 * [Week 1](#week-1)
 * [Week 2](#week-2)
-* [Week 2](#week-3)
+* [Week 3](#week-3)
 
 
 For view The Full Folder Structure Here👇
@@ -1905,7 +1905,8 @@ make sky130hd_week4_verilog
 
 ```
 
-![verilog_generation](https://user-images.githubusercontent.com/83899035/222790630-04a36b3e-4887-4d78-8a3e-ba69698f0631.png)
+<!-- ![verilog_generation](https://user-images.githubusercontent.com/83899035/222790630-04a36b3e-4887-4d78-8a3e-ba69698f0631.png) -->
+![verilog_generation2](https://user-images.githubusercontent.com/83899035/222792934-5e06194a-9e48-408b-9f30-b9fad32e1fd4.png)
 
 
 
