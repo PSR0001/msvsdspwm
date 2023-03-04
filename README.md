@@ -1844,6 +1844,23 @@ Spice Simulation
 
 
 
+
+#### Magic layout with Hand Drawn
+
+
+![magic_hand](https://user-images.githubusercontent.com/83899035/222871011-32ff1c76-302e-4b3e-91d6-f0b9eba0c456.png)
+
+Pre Layout
+![pre_layout](https://user-images.githubusercontent.com/83899035/222870986-da241c26-2ad4-4242-a596-de7bee27ff3a.png)
+Post Layout
+![post_layout](https://user-images.githubusercontent.com/83899035/222870988-c095b685-462d-4d86-b7b8-c3b6b934f0a3.png)
+
+#### Result 
+Pre and Post layout Simulation matched
+
+
+
+
 ## OpenROAD Flow # OpenFASoC
 
 makefile
