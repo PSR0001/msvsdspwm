@@ -1584,63 +1584,6 @@ XC3 Y VN sky130_fd_pr__cap_mim_m3_1 W=1000 L=1000 MF=1 m=1
 #### Without Capacitor
 ![without_cap_sch](https://user-images.githubusercontent.com/83899035/222740142-ae802bc1-6410-44f5-9f61-11f0b33765a6.png)
 
-#### Simulation Without Capacitor
-
-For view The Full Netlist Here👇
-<details><summary>Netlist</summary>
-
-```
-** sch_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog_tb.sch
-**.subckt analog_tb
-X1 VN VP Y analog
-V1 VP VN 1.8
-.save i(v1)
-**** begin user architecture code
-
-
-.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
-.control
-save all
-tran 1u 0.001
-plot v(y)
-.endc
-
-**** end user architecture code
-**.ends
-
-* expanding   symbol:  analog.sym # of pins=3
-** sym_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog.sym
-** sch_path: /home/coold69/Documents/msvsdspwm/Week 3/xschem/analog.sch
-.subckt analog VN VP Y
-*.iopin VP
-*.iopin VN
-*.opin Y
-XM2 net1 Y VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM1 net2 net1 VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM3 Y net2 VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1.68 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM4 net1 Y VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM5 net2 net1 VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=0.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-.ends
-
-.end
-```
-</details>
-<br>
-
-![whithout caps](https://user-images.githubusercontent.com/83899035/222738333-30a29cb5-abf9-4929-bf20-abc3c3d34443.png)
 
 ### ALIGN FLOW
 
