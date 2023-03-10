@@ -1,0 +1,8 @@
+10^8 = xschem_180/150nm design working fine
+comp_150.sch final
+
+mag_adc_m4 final
+
+
+
+
