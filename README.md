@@ -1725,8 +1725,8 @@ Post Layout
 #### Result 
 Pre and Post layout Simulation matched
 
-# Week 4
-
+# Week 4 
+<!-- 
 ## Index
 - [1 bit ADC](#1-bit-adc)
     * [Comparator Pre-Layout using Xschem](#comparator-pre-layout-using-xschem)
@@ -1826,9 +1826,7 @@ M5 net2 net1 GND GND sky130_fd_pr__nfet_01v8 L=1200-9 W=25.2e-7
 M6 INP net2 GND GND sky130_fd_pr__nfet_01v8 L=1200-9 W=25.2e-7
 .ends
 ```
-<!-- |.gds|.lef|
-|-|-|
-|![image](https://user-images.githubusercontent.com/83899035/224009018-7ee7b6d8-2be9-44e9-ad8e-425fd9f4ed7e.png)|![image](https://user-images.githubusercontent.com/83899035/224009230-728eff64-a082-4ba7-9c76-3d2f60e9f912.png)| -->
+
 |.gds|.lef|
 |-|-|
 |![image](https://user-images.githubusercontent.com/83899035/224212506-f19957ff-dd81-4e91-8e26-60716b07c1f1.png)|![image](https://user-images.githubusercontent.com/83899035/224212636-a5e869f4-d6ca-4f04-9ad3-18d6b15e16b2.png)|
@@ -1977,7 +1975,7 @@ Pre & Post layout Simulation matched.
 ### Lef & GDS File For OpenFASoC Flow
 |.gds|.lef|
 |-|-|
-|![image](https://user-images.githubusercontent.com/83899035/224216719-054728c3-038a-40d7-9649-952bc65c8e2b.png)| ![image](https://user-images.githubusercontent.com/83899035/224216827-0857707d-5a4b-4c61-97ae-e539cfa937e8.png)|
+|![image](https://user-images.githubusercontent.com/83899035/224216719-054728c3-038a-40d7-9649-952bc65c8e2b.png)| ![image](https://user-images.githubusercontent.com/83899035/224216827-0857707d-5a4b-4c61-97ae-e539cfa937e8.png)| -->
 
 
 
