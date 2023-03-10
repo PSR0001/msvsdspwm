@@ -1678,21 +1678,21 @@ schematic2layout.py ../ALIGN-pdk-sky130/examples/analog -p ../pdks/SKY130_PDK/
 ![magic_100caps_align_sim](https://user-images.githubusercontent.com/83899035/222761980-9c4c38b0-18e0-47c7-a0d9-fc0adca8711b.png)
 
 
-#### Restriction Use Capacitor in ALIGN
+<!-- #### Restriction Use Capacitor in ALIGN
 
-![restriction_caps_align](https://user-images.githubusercontent.com/83899035/222746683-35e324af-5517-43a9-80b5-39f370ac409c.png)
+![restriction_caps_align](https://user-images.githubusercontent.com/83899035/222746683-35e324af-5517-43a9-80b5-39f370ac409c.png) -->
 
 So going with wihout Capacitor
 
 Six CMOS Netlist without Capacitor
 ```
-.subckt analog VN VP Y
-M2 net1 Y VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
-M1 net2 net1 VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
-M3 Y net2 VP VP sky130_fd_pr__pfet_01v8 L=150n W=1680n nf=2 m=1
-M4 net1 Y VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
-M5 net2 net1 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
-M6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
+.subckt ring_oscillator VCC GND INP
+M1 net1 INP VCC VCC sky130_fd_pr__pfet_01v8 L=1200-9 W=25.2e-7
+M2 net2 net1 VCC VCC sky130_fd_pr__pfet_01v8 L=1200-9 W=25.2e-7
+M3 INP net2 VCC VCC sky130_fd_pr__pfet_01v8 L=1200-9 W=25.2e-7
+M4 net1 INP GND GND sky130_fd_pr__nfet_01v8 L=1200-9 W=25.2e-7
+M5 net2 net1 GND GND sky130_fd_pr__nfet_01v8 L=1200-9 W=25.2e-7
+M6 INP net2 GND GND sky130_fd_pr__nfet_01v8 L=1200-9 W=25.2e-7
 .ends
 ```
 #### ALIGN Generated Layout (Klayout view)
@@ -1701,146 +1701,14 @@ M6 Y net2 VN VN sky130_fd_pr__nfet_01v8 L=150n W=840n nf=2 m=1
 |---|---|
 |![gds_840_1680_without_cap](https://user-images.githubusercontent.com/83899035/222746029-b4ff7aae-6895-4625-864b-71a82ed5d8ce.png)|![lef_840_1680_without_cap](https://user-images.githubusercontent.com/83899035/222746038-6b548124-826c-4eba-98c3-2e285b53c7a5.png)|
 
+
 #### Magic View
 
-![magic_without_caps](https://user-images.githubusercontent.com/83899035/222747739-23942fc5-d21a-473c-a90f-efbfa83eba00.png)
+![image](https://user-images.githubusercontent.com/83899035/224214958-4ea58875-30d3-4b63-8634-c34ab21917b0.png)
 
-#### Magic Generated Netlist 
-Commands For generating Netlist
+#### Simulation
 
-```bash
-extract do local 
-extract all
-ext2spice lvs
-ext2spice cthresh 0 rthresh 0
-#matching port automatically
-readspice <location_prelayout_spice_netlist>
-ext2spice
-```
-
-Spice Netlist
-For view The Full Netlist Here👇
-<details><summary>Netlist</summary>
-
-```
-* NGSPICE file created from ANALOG_0.ext - technology: sky130A
-
-.subckt NMOS_S_25628869_X1_Y1_1677466711_1677466713 a_200_252# a_230_483# a_147_483#
-X0 a_230_483# a_200_252# a_147_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
-X1 a_147_483# a_200_252# a_230_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
-C0 a_200_252# a_230_483# 0.11fF
-C1 a_230_483# a_147_483# 0.74fF
-C2 a_200_252# a_147_483# 0.89fF
-.ends
-
-.subckt PMOS_S_89421238_X1_Y1_1677466712_1677466713 a_200_252# a_230_399# w_0_0# VSUBS
-X0 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=8.904e+11p ps=7.78e+06u w=1.68e+06u l=150000u
-X1 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
-C0 a_230_399# w_0_0# 0.78fF
-C1 w_0_0# a_200_252# 0.66fF
-C2 a_230_399# a_200_252# 0.10fF
-C3 a_230_399# VSUBS -0.03fF
-C4 a_200_252# VSUBS 0.06fF
-C5 w_0_0# VSUBS 2.97fF
-.ends
-
-.subckt STAGE2_INV_27873531_PG0_0_0_1677466713 li_405_1411# PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0#
-+ m1_742_560# li_405_571# VSUBS
-XNMOS_S_25628869_X1_Y1_1677466711_1677466713_0 li_405_571# li_405_1411# VSUBS NMOS_S_25628869_X1_Y1_1677466711_1677466713
-XNMOS_S_25628869_X1_Y1_1677466711_1677466713_1 m1_742_560# li_405_571# VSUBS NMOS_S_25628869_X1_Y1_1677466711_1677466713
-XPMOS_S_89421238_X1_Y1_1677466712_1677466713_0 li_405_571# li_405_1411# PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0#
-+ VSUBS PMOS_S_89421238_X1_Y1_1677466712_1677466713
-XPMOS_S_89421238_X1_Y1_1677466712_1677466713_1 m1_742_560# li_405_571# PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0#
-+ VSUBS PMOS_S_89421238_X1_Y1_1677466712_1677466713
-C0 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# li_405_571# 0.92fF
-C1 li_405_1411# m1_742_560# 0.02fF
-C2 m1_742_560# li_405_571# 0.38fF
-C3 li_405_1411# li_405_571# 0.11fF
-C4 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# m1_742_560# 0.71fF
-C5 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# li_405_1411# 0.10fF
-C6 li_405_571# VSUBS 0.90fF
-C7 m1_742_560# VSUBS 0.93fF
-C8 PMOS_S_89421238_X1_Y1_1677466712_1677466713_1/w_0_0# VSUBS 5.04fF
-C9 li_405_1411# VSUBS 0.59fF
-.ends
-
-.subckt PMOS_S_89421238_X1_Y1_1677466712_1677466712 a_200_252# a_230_399# w_0_0# VSUBS
-X0 a_230_399# a_200_252# w_0_0# w_0_0# sky130_fd_pr__pfet_01v8 ad=4.704e+11p pd=3.92e+06u as=8.904e+11p ps=7.78e+06u w=1.68e+06u l=150000u
-X1 w_0_0# a_200_252# a_230_399# w_0_0# sky130_fd_pr__pfet_01v8 ad=0p pd=0u as=0p ps=0u w=1.68e+06u l=150000u
-C0 a_230_399# a_200_252# 0.10fF
-C1 w_0_0# a_230_399# 0.78fF
-C2 w_0_0# a_200_252# 0.66fF
-C3 a_230_399# VSUBS -0.03fF
-C4 a_200_252# VSUBS 0.06fF
-C5 w_0_0# VSUBS 2.97fF
-.ends
-
-.subckt NMOS_S_25628869_X1_Y1_1677466711_1677466712 a_200_252# a_230_483# a_147_483#
-X0 a_230_483# a_200_252# a_147_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=2.352e+11p pd=2.24e+06u as=4.452e+11p ps=4.42e+06u w=840000u l=150000u
-X1 a_147_483# a_200_252# a_230_483# a_147_483# sky130_fd_pr__nfet_01v8 ad=0p pd=0u as=0p ps=0u w=840000u l=150000u
-C0 a_200_252# a_230_483# 0.11fF
-C1 a_230_483# a_147_483# 0.74fF
-C2 a_200_252# a_147_483# 0.89fF
-.ends
-
-.subckt INV_21850877_PG0_0_0_1677466712 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0#
-+ li_61_1411# m1_226_560# VSUBS
-XPMOS_S_89421238_X1_Y1_1677466712_1677466712_0 m1_226_560# li_61_1411# PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0#
-+ VSUBS PMOS_S_89421238_X1_Y1_1677466712_1677466712
-XNMOS_S_25628869_X1_Y1_1677466711_1677466712_0 m1_226_560# li_61_1411# VSUBS NMOS_S_25628869_X1_Y1_1677466711_1677466712
-C0 li_61_1411# m1_226_560# 0.14fF
-C1 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0# li_61_1411# 0.02fF
-C2 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0# m1_226_560# 0.55fF
-C3 li_61_1411# VSUBS 0.69fF
-C4 m1_226_560# VSUBS 1.33fF
-C5 PMOS_S_89421238_X1_Y1_1677466712_1677466712_0/w_0_0# VSUBS 3.02fF
-.ends
-
-.subckt ANALOG_0 VN VP Y
-XSTAGE2_INV_27873531_PG0_0_0_1677466713_0 li_1093_1495# VN Y STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571#
-+ VP STAGE2_INV_27873531_PG0_0_0_1677466713
-XINV_21850877_PG0_0_0_1677466712_0 VN Y li_1093_1495# VP INV_21850877_PG0_0_0_1677466712
-C0 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# VN 0.33fF
-C1 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# Y 0.09fF
-C2 Y VN 0.58fF
-C3 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# li_1093_1495# 0.20fF
-C4 VN li_1093_1495# 0.82fF
-C5 Y li_1093_1495# 0.34fF
-C6 STAGE2_INV_27873531_PG0_0_0_1677466713_0/li_405_571# VP 0.70fF
-C7 Y VP 1.01fF
-C8 VN VP 12.10fF
-C9 li_1093_1495# VP 2.20fF
-.ends
-
-*added manually for simulation
-X1 VN VP Y ANALOG_0
-V1 VP VN 1.8
-.save i(v1)
-
-.lib ~/open_pdks/sources/sky130-pdk/libraries/sky130_fd_pr/latest/models/sky130.lib.spice tt
-.control
-save all
-tran 1u 0.001
-plot v(y)
-.endc
-
-.end
-```
-</details>
-<br>
-
-#### Simulation 
-![without_caps_sim_magic](https://user-images.githubusercontent.com/83899035/222760095-c09084ee-f4b7-400d-a2af-1baf620d2059.png)
-
-#### Result 
-
-#### Magic View with Capacitor
-This capacitors are manually added with magic layout tool.
-![madic_with_hand_cap](https://user-images.githubusercontent.com/83899035/222767409-f871b114-9861-4411-8afb-e30a25b93826.png)
-
-Spice Simulation
-![with_caps_magic_hand](https://user-images.githubusercontent.com/83899035/222773691-908288fc-7a2b-4d0a-b36a-c3a7ee180552.png)
-
+![post_layout](https://user-images.githubusercontent.com/83899035/224215675-ff1bb34b-1d7b-465b-97f8-9bb2aaa8c37f.png)
 
 
 
@@ -1860,11 +1728,34 @@ Pre and Post layout Simulation matched
 # Week 4
 
 ## Index
+- [1 bit ADC](#1-bit-adc)
+    * [Comparator Pre-Layout using Xschem](#comparator-pre-layout-using-xschem)
+        + [150nm Comparator Design](#150nm-comparator-design)
+        + [Ring_Oscillator](#ring_oscillator)
+        + [Simulation ADC with Ring Oscillator](#simulation-adc-with-ring-oscillator)
+        + [Output](#output)
+    * [ALIGN Flow](#comparator-pre-layout-using-xschem)
+        + [RING_OSCILLATOR ALIGN SPICE Netlist](#ring_oscillator-align-spice-netlist)
+        + [ADC ALIGN SPICE Netlist](#adc-align-spice-netlist)
+        + [Simulation ADC with Ring Oscillator](#simulation-adc-with-ring-oscillator)
+        + [Output](#output)
+       
+- [Creating inverter schematic using xschem](#creating-inverter-schematic-using-xschem)
+    * [Pre-Layout Simulation](#pre-layout-simulation)
+        + [Creating and simulating testbench Schematic](#creating-and-simulating-testbench-schematic)
+    * [Post-Layout Simulation](#post-layout-simulation)
+    * [Comparison of Pre-layout and Post-layout timing parameters for inverter](#comparison-of-pre-layout-and-post-layout-timing-parameters-for-inverter)
+    * [LVS Report](#lvs-report)
+    
+- [Circuit Simulation From Spice ](#circuit-simulation-from-spice)
+    * [Pre-layout Circuit ](#pre-layout-circuit)
+    * [Post Layout ](#post-layout)
+    * [LVS Report](#lvs-report-spice-netlist-magic)
 
 
 ## 1 bit ADC
 
-### Pre-Layout using Xschem
+### Comparator Pre-Layout using Xschem
 Circuit 
 #### 150nm Comparator Design
 ![image](https://user-images.githubusercontent.com/83899035/224003631-a6767338-2379-40ba-b9ba-5a74d9de9567.png)
@@ -1923,7 +1814,7 @@ plot  v(inp) v(out) v(inn)
 
 ### ALIGN Flow
 
-#### RING_OSCILLATOR
+#### RING_OSCILLATOR ALIGN SPICE Netlist
 Netlist
 ```
 .subckt ring_oscillator VCC GND INP
@@ -1943,7 +1834,7 @@ M6 INP net2 GND GND sky130_fd_pr__nfet_01v8 L=1200-9 W=25.2e-7
 |![image](https://user-images.githubusercontent.com/83899035/224212506-f19957ff-dd81-4e91-8e26-60716b07c1f1.png)|![image](https://user-images.githubusercontent.com/83899035/224212636-a5e869f4-d6ca-4f04-9ad3-18d6b15e16b2.png)|
 
 
-#### ADC
+#### ADC ALIGN SPICE Netlist
 Netlist 
 ```
 .subckt comparator OUT VCC GND INP INN BIAS
@@ -1967,7 +1858,7 @@ M11 OUT net5 GND GND sky130_fd_pr__nfet_01v8 L=150e-9 W=8.4e-7 nf=4
 
 
 
-### Magic View
+### Magic View ADC 
 
 ![magic_adc](https://user-images.githubusercontent.com/83899035/224213152-7adbccbc-7faa-4248-8c39-5b3bc7370b25.png)
 
@@ -2083,14 +1974,14 @@ C50 INP GND 0.75fF
 #### Result 
 Pre & Post layout Simulation matched.
 
-
+### Lef & GDS File For OpenFASoC Flow
+|.gds|.lef|
+|-|-|
+|![image](https://user-images.githubusercontent.com/83899035/224216719-054728c3-038a-40d7-9649-952bc65c8e2b.png)| ![image](https://user-images.githubusercontent.com/83899035/224216827-0857707d-5a4b-4c61-97ae-e539cfa937e8.png)|
 
 
 
 <!-- 
-|.gds|.lef|
-|-|-|
-|| |
 |.gds|.lef|
 |-|-|
 || |
