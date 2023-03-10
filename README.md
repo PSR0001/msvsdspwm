@@ -1726,7 +1726,7 @@ Post Layout
 Pre and Post layout Simulation matched
 
 # Week 4 
-<!-- 
+
 ## Index
 - [1 bit ADC](#1-bit-adc)
     * [Comparator Pre-Layout using Xschem](#comparator-pre-layout-using-xschem)
@@ -1975,7 +1975,7 @@ Pre & Post layout Simulation matched.
 ### Lef & GDS File For OpenFASoC Flow
 |.gds|.lef|
 |-|-|
-|![image](https://user-images.githubusercontent.com/83899035/224216719-054728c3-038a-40d7-9649-952bc65c8e2b.png)| ![image](https://user-images.githubusercontent.com/83899035/224216827-0857707d-5a4b-4c61-97ae-e539cfa937e8.png)| -->
+|![image](https://user-images.githubusercontent.com/83899035/224216719-054728c3-038a-40d7-9649-952bc65c8e2b.png)| ![image](https://user-images.githubusercontent.com/83899035/224216827-0857707d-5a4b-4c61-97ae-e539cfa937e8.png)|
 
 
 
