@@ -1929,6 +1929,56 @@ Pre & Post layout Simulation matched.
 
 ## OpenFASoC Flow Verilog File
 
+### Dummy Verilog For Top level
+```verilog
+module analog_async_up_down(
+    input in_ring,
+    input in_bias,
+    input in_inn,
+    output out_adc
+);
+
+wire ring_adc;
+
+analog_1bit_adc one_bit_adc(
+    .in(in_ring),
+    .out(ring_adc)
+);
+
+analog_ring_osc ring_osc(
+    .in(ring_adc),
+    .in(in_inn),
+    .in(in_bias),
+    .out(out_adc)
+);
+
+endmodule
+```
+
+#### Verilog Code For ADC
+```verilog
+module analog_1bit_adc(
+    input in_bias,
+    input in_inn,
+    output out_adc
+);
+
+(*I do not know how to write @@ codes EX: @@ @no a_buffer_0 (.A(lc_0), .nbout(lc_out)); *)
+
+endmodule
+```
+#### Verilog Code For analog_ring_osc
+```verilog
+module analog_ring_osc(
+    input in_ring,
+    output rimg_adc
+);
+
+endmodule
+```
+
+
+
 <!-- 
 |.gds|.lef|
 |-|-|
