@@ -227,6 +227,14 @@ export PATH=~/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:~/OpenROAD-flow-s
 
 ```
 ### Install OpenFASoC
+To install the OpenFASoC use the following commands
+```bash
+cd
+git clone https://github.com/idea-fasoc/openfasoc
+cd openfasoc
+./dependencies.sh
+export PDK_ROOT=/usr/local/share/pdk
+```
 
 
 

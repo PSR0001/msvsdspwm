@@ -1940,12 +1940,11 @@ module analog_async_up_down(
 
 wire ring_adc;
 
-analog_1bit_adc one_bit_adc(
+analog_ring_osc ring_osc(
     .in(in_ring),
     .out(ring_adc)
 );
-
-analog_ring_osc ring_osc(
+analog_1bit_adc one_bit_adc(
     .in(ring_adc),
     .in(in_inn),
     .in(in_bias),
@@ -1955,7 +1954,7 @@ analog_ring_osc ring_osc(
 endmodule
 ```
 
-#### Verilog Code For ADC
+<!-- #### Verilog Code For ADC
 ```verilog
 module analog_1bit_adc(
     input in_bias,
@@ -1971,11 +1970,11 @@ endmodule
 ```verilog
 module analog_ring_osc(
     input in_ring,
-    output rimg_adc
+    output ring_adc
 );
 
 endmodule
-```
+``` -->
 
 
 
