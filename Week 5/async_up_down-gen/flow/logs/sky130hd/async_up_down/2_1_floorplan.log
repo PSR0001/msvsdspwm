@@ -1,0 +1,31 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/coold69/openfasoc/openfasoc/generators/async_up_down-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/coold69/openfasoc/openfasoc/generators/async_up_down-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0222] Reading LEF file: /home/coold69/openfasoc/openfasoc/generators/async_up_down-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0225]     Created 441 library cells
+[INFO ODB-0226] Finished LEF file:  /home/coold69/openfasoc/openfasoc/generators/async_up_down-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0222] Reading LEF file: ../blocks/sky130hd/lef/COMPARATOR.lef
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0220] WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../blocks/sky130hd/lef/COMPARATOR.lef at line 654.
+
+[INFO ODB-0225]     Created 1 library cells
+[INFO ODB-0226] Finished LEF file:  ../blocks/sky130hd/lef/COMPARATOR.lef
+[INFO ODB-0222] Reading LEF file: ../blocks/sky130hd/lef/RING_OSCILLATOR.lef
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0220] WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../blocks/sky130hd/lef/RING_OSCILLATOR.lef at line 380.
+
+[INFO ODB-0225]     Created 1 library cells
+[INFO ODB-0226] Finished LEF file:  ../blocks/sky130hd/lef/RING_OSCILLATOR.lef
+[ERROR STA-0190] async_up_down is not a verilog module.
+Error: floorplan.tcl, 3 STA-0190
+Command exited with non-zero status 1
+Elapsed time: 0:00.40[h:]min:sec. CPU time: user 0.36 sys 0.02 (96%). Peak memory: 100660KB.

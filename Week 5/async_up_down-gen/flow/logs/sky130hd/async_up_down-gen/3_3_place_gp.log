@@ -1,0 +1,170 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 460 2720
+[INFO GPL-0004] CoreAreaLxLy: 18400 16320
+[INFO GPL-0005] CoreAreaUxUy: 137080 130560
+[INFO GPL-0006] NumInstances: 429
+[INFO GPL-0007] NumPlaceInstances: 150
+[INFO GPL-0008] NumFixedInstances: 245
+[INFO GPL-0009] NumDummyInstances: 34
+[INFO GPL-0010] NumNets: 155
+[INFO GPL-0011] NumPins: 522
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 155480 146880
+[INFO GPL-0014] CoreAreaLxLy: 18400 16320
+[INFO GPL-0015] CoreAreaUxUy: 137080 130560
+[INFO GPL-0016] CoreArea: 13558003200
+[INFO GPL-0017] NonPlaceInstsArea: 3682281600
+[INFO GPL-0018] PlaceInstsArea: 2229638400
+[INFO GPL-0019] Util(%): 22.58
+[INFO GPL-0020] StdInstsArea: 2229638400
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00000012 HPWL: 6664150
+[InitialPlace]  Iter: 2 CG residual: 0.00000005 HPWL: 5413691
+[InitialPlace]  Iter: 3 CG residual: 0.00000011 HPWL: 5403111
+[InitialPlace]  Iter: 4 CG residual: 0.00000009 HPWL: 5394987
+[InitialPlace]  Iter: 5 CG residual: 0.00000010 HPWL: 5353382
+[INFO GPL-0031] FillerInit: NumGCells: 409
+[INFO GPL-0032] FillerInit: NumGNets: 155
+[INFO GPL-0033] FillerInit: NumGPins: 522
+[INFO GPL-0023] TargetDensity: 0.60
+[INFO GPL-0024] AveragePlaceInstArea: 14864256
+[INFO GPL-0025] IdealBinArea: 24773760
+[INFO GPL-0026] IdealBinCnt: 547
+[INFO GPL-0027] TotalBinArea: 13558003200
+[INFO GPL-0028] BinCnt: 16 16
+[INFO GPL-0029] BinSize: 7418 7140
+[INFO GPL-0030] NumBins: 256
+[NesterovSolve] Iter: 1 overflow: 0.57812 HPWL: 4602086
+[INFO GPL-0100] worst slack 1e+30
+[WARNING GPL-0102] No slacks found. Timing-driven mode disabled.
+[NesterovSolve] Snapshot saved at iter = 0
+[NesterovSolve] Iter: 10 overflow: 0.464948 HPWL: 4564335
+[NesterovSolve] Iter: 20 overflow: 0.45665 HPWL: 4507091
+[NesterovSolve] Iter: 30 overflow: 0.442716 HPWL: 4451008
+[NesterovSolve] Iter: 40 overflow: 0.472482 HPWL: 4451555
+[NesterovSolve] Iter: 50 overflow: 0.471734 HPWL: 4462712
+[NesterovSolve] Iter: 60 overflow: 0.458368 HPWL: 4461249
+[NesterovSolve] Iter: 70 overflow: 0.454403 HPWL: 4452124
+[NesterovSolve] Iter: 80 overflow: 0.450919 HPWL: 4445755
+[NesterovSolve] Iter: 90 overflow: 0.447797 HPWL: 4437994
+[NesterovSolve] Iter: 100 overflow: 0.442088 HPWL: 4427706
+[NesterovSolve] Iter: 110 overflow: 0.431769 HPWL: 4412477
+[NesterovSolve] Iter: 120 overflow: 0.431707 HPWL: 4420547
+[NesterovSolve] Iter: 130 overflow: 0.427812 HPWL: 4412597
+[NesterovSolve] Iter: 140 overflow: 0.424527 HPWL: 4412027
+[NesterovSolve] Iter: 150 overflow: 0.425491 HPWL: 4411909
+[NesterovSolve] Iter: 160 overflow: 0.413165 HPWL: 4412252
+[NesterovSolve] Iter: 170 overflow: 0.415687 HPWL: 4417434
+[NesterovSolve] Iter: 180 overflow: 0.406948 HPWL: 4405586
+[NesterovSolve] Iter: 190 overflow: 0.394156 HPWL: 4403412
+[NesterovSolve] Iter: 200 overflow: 0.382548 HPWL: 4406002
+[NesterovSolve] Iter: 210 overflow: 0.358185 HPWL: 4389457
+[NesterovSolve] Iter: 220 overflow: 0.32258 HPWL: 4362046
+[NesterovSolve] Iter: 230 overflow: 0.292802 HPWL: 4338841
+[NesterovSolve] Iter: 240 overflow: 0.260704 HPWL: 4321127
+[NesterovSolve] Iter: 250 overflow: 0.228443 HPWL: 4337535
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[INFO GPL-0036] TileLxLy: 0 0
+[INFO GPL-0037] TileSize: 6900 6900
+[INFO GPL-0038] TileCnt: 22 21
+[INFO GPL-0039] numRoutingLayers: 6
+[INFO GPL-0040] NumTiles: 462
+[INFO GPL-0063] TotalRouteOverflowH2: 0.0
+[INFO GPL-0064] TotalRouteOverflowV2: 0.0
+[INFO GPL-0065] OverflowTileCnt2: 0
+[INFO GPL-0066] 0.5%RC: 0.9416666527589163
+[INFO GPL-0067] 1.0%RC: 0.8791666676600774
+[INFO GPL-0068] 2.0%RC: 0.8270833368102709
+[INFO GPL-0069] 5.0%RC: 0.7601694878885301
+[INFO GPL-0070] 0.5rcK: 1.0
+[INFO GPL-0071] 1.0rcK: 1.0
+[INFO GPL-0072] 2.0rcK: 0.0
+[INFO GPL-0073] 5.0rcK: 0.0
+[INFO GPL-0074] FinalRC: 0.91041666
+[NesterovSolve] Iter: 260 overflow: 0.189841 HPWL: 4336418
+[NesterovSolve] Iter: 270 overflow: 0.152959 HPWL: 4345933
+[NesterovSolve] Iter: 280 overflow: 0.127551 HPWL: 4352051
+[NesterovSolve] Iter: 290 overflow: 0.108215 HPWL: 4362090
+[NesterovSolve] Finished with Overflow: 0.098918
+
+==========================================================================
+global place report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+global place report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+global place report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+global place report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+global place report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global place report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global place report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: _178_ (falling edge-triggered flip-flop)
+Endpoint: DOUT[10] (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.06    0.00    0.00 v _178_/CLK_N (sky130_fd_sc_hd__dfrtn_1)
+                  0.07    0.36    0.36 v _178_/Q (sky130_fd_sc_hd__dfrtn_1)
+     3    0.01                           temp_analog_1.async_counter_0.div_r[8] (net)
+                  0.07    0.00    0.36 v _100_/A3 (sky130_fd_sc_hd__mux4_2)
+                  0.10    0.50    0.87 v _100_/X (sky130_fd_sc_hd__mux4_2)
+     1    0.01                           _061_ (net)
+                  0.10    0.00    0.87 v _101_/B1 (sky130_fd_sc_hd__a221oi_4)
+                  1.29    1.06    1.92 ^ _101_/Y (sky130_fd_sc_hd__a221oi_4)
+    27    0.12                           _062_ (net)
+                  1.29    0.01    1.93 ^ _129_/C (sky130_fd_sc_hd__nor3_1)
+                  0.33    0.36    2.29 v _129_/Y (sky130_fd_sc_hd__nor3_1)
+     1    0.02                           DOUT[10] (net)
+                  0.33    0.00    2.29 v DOUT[10] (out)
+                                  2.29   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+global place report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             1.65e-13   5.44e-14   5.48e-10   5.48e-10  42.5%
+Combinational          9.71e-14   2.42e-13   7.40e-10   7.40e-10  57.5%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  2.62e-13   2.96e-13   1.29e-09   1.29e-09 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 2559 u^2 19% utilization.
+
+Elapsed time: 0:00.64[h:]min:sec. CPU time: user 0.46 sys 0.16 (97%). Peak memory: 178868KB.
