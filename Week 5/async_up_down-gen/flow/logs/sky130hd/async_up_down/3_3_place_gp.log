@@ -1,0 +1,83 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 460 2720
+[INFO GPL-0004] CoreAreaLxLy: 15180 16320
+[INFO GPL-0005] CoreAreaUxUy: 179860 179520
+[INFO GPL-0006] NumInstances: 463
+[INFO GPL-0007] NumPlaceInstances: 2
+[INFO GPL-0008] NumFixedInstances: 461
+[INFO GPL-0009] NumDummyInstances: 0
+[INFO GPL-0010] NumNets: 4
+[INFO GPL-0011] NumPins: 8
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 200000 200000
+[INFO GPL-0014] CoreAreaLxLy: 15180 16320
+[INFO GPL-0015] CoreAreaUxUy: 179860 179520
+[INFO GPL-0016] CoreArea: 26875776000
+[INFO GPL-0017] NonPlaceInstsArea: 1027235200
+[INFO GPL-0018] PlaceInstsArea: 539952700
+[INFO GPL-0019] Util(%): 2.09
+[INFO GPL-0020] StdInstsArea: 539952700
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00000003 HPWL: 593990
+[InitialPlace]  Iter: 2 CG residual: 0.00000001 HPWL: 531416
+[InitialPlace]  Iter: 3 CG residual: 0.00000001 HPWL: 511791
+[InitialPlace]  Iter: 4 CG residual: 0.00000001 HPWL: 504580
+[InitialPlace]  Iter: 5 CG residual: 0.00000006 HPWL: 504580
+[INFO GPL-0031] FillerInit: NumGCells: 70
+[INFO GPL-0032] FillerInit: NumGNets: 4
+[INFO GPL-0033] FillerInit: NumGPins: 8
+[INFO GPL-0023] TargetDensity: 0.60
+[INFO GPL-0024] AveragePlaceInstArea: 269976350
+[INFO GPL-0025] IdealBinArea: 449960576
+[INFO GPL-0026] IdealBinCnt: 59
+[INFO GPL-0027] TotalBinArea: 26875776000
+[INFO GPL-0028] BinCnt: 4 4
+[INFO GPL-0029] BinSize: 41170 40800
+[INFO GPL-0030] NumBins: 16
+[NesterovSolve] Iter: 1 overflow: 0 HPWL: 408088
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/OUT
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/OUT
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/OUT
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/OUT
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/OUT
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/OUT
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm ring_osc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INP
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/INN
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[WARNING ODB-0034] Can not find physical location of iterm one_bit_adc/BIAS
+[INFO GPL-0100] worst slack 1e+30
+[WARNING GPL-0102] No slacks found. Timing-driven mode disabled.
+[NesterovSolve] Snapshot saved at iter = 0
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[ERROR GRT-0029] Pin one_bit_adc/BIAS does not have geometries below the max routing layer (met5).
+Error: global_place.tcl, 49 GRT-0029
+Command exited with non-zero status 1
+Elapsed time: 0:00.43[h:]min:sec. CPU time: user 0.37 sys 0.04 (95%). Peak memory: 121672KB.

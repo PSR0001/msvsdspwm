@@ -1,7 +1,7 @@
-modeule COMPARATOR(
-    inp,
-    inn,
-    inb,
-    out
+module COMPARATOR(
+    input INP,
+    input INN,
+    input BIAS,
+    output OUT
 );
 endmodule

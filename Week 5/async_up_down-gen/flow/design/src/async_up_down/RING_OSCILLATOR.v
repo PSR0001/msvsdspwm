@@ -1,5 +1,4 @@
-modeule RING_OSCILLATOR(
-    in,
-    out
+module RING_OSCILLATOR(
+    output INP
 );
 endmodule
