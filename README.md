@@ -2123,10 +2123,6 @@ Design area 2347 u^2 4% utilization.
 
 ![image](https://user-images.githubusercontent.com/83899035/225965920-d89b127b-0f2e-4ed0-ab81-2a4a32489004.png)
 
-
-
-
-
 ### Final layout 
 ![image](https://user-images.githubusercontent.com/83899035/225990221-50b684f7-0638-4aba-b59f-d8d36f357480.png)
 
@@ -2137,26 +2133,29 @@ Design area 2347 u^2 4% utilization.
 ![image](https://user-images.githubusercontent.com/83899035/225992309-945719f4-745d-40f3-b44d-946fab25266d.png)
 
 
+## Place and Route 
+![image](https://user-images.githubusercontent.com/83899035/227610587-918aa305-4a6f-47bf-9dfb-fbafde877362.png)
+
+
+## DRC
+![image](https://user-images.githubusercontent.com/83899035/227610961-67ead9e2-1905-4e5a-9d2b-ef059aed6e98.png)
+
+
 ### Final Files
 
-![image](https://user-images.githubusercontent.com/83899035/225990746-a78ca4f8-471a-495d-a5b3-3b2269cbe50d.png)
+![image](https://user-images.githubusercontent.com/83899035/227609648-74aa2237-ba5c-4347-b42b-07ce71a93dd8.png)
 
 
-### Error
-![image](https://user-images.githubusercontent.com/83899035/225995506-24a8ecce-f392-4b53-a9e5-d392e58edfd4.png)
 
-
-![image](https://user-images.githubusercontent.com/83899035/225995191-6a76fdc6-1056-4311-80f8-80871cca4a79.png)
-
-
-## Only The GDS File part is left.
-I face this problem because the hierarchy of lef and gds file(ALIGN FLOW)
-
-## OpenROAD
+## OpenROAD Gui view
 
 ![image](https://user-images.githubusercontent.com/83899035/225997365-e96bb189-baf7-46bf-8dee-ca7d16c06174.png)
 
+## GDS file Klayout view
+![image](https://user-images.githubusercontent.com/83899035/227609947-ee940e0c-4698-4879-92cb-a08fd298d9bd.png)
 
+## RTL to GDS Flow 
+Done
 
 
 <!-- 
