@@ -11,8 +11,8 @@ This repository contains the documentation of the work done during a 10 Weeks VS
 * [Week 2](#week-2)
 * [Week 3](#week-3)
 * [Week 4](#week-4)
-<!-- * [Week 5](#week-5)
 * [Week 5](#week-5)
+<!-- * [Week 5](#week-5)
 * [Week 5](#week-5)
 * [Week 5](#week-5)
 * [Week 5](#week-5) -->
