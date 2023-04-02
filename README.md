@@ -2159,8 +2159,27 @@ Design area 2347 u^2 4% utilization.
 ## GDS file Klayout view
 ![image](https://user-images.githubusercontent.com/83899035/227609947-ee940e0c-4698-4879-92cb-a08fd298d9bd.png)
 
-## RTL to GDS Flow 
-Done
+
+# Week 6
+
+
+## DRC Clean
+
+![image](https://user-images.githubusercontent.com/83899035/229348888-418ff359-5535-4611-8434-2b5748838176.png)
+
+### Final GDS
+![image](https://user-images.githubusercontent.com/83899035/229348915-fbe63c5a-3434-484f-9d75-68e34367f698.png)
+![image](https://user-images.githubusercontent.com/83899035/229348925-eb5461bf-47cb-4d04-ab01-90234b5b8ee4.png)
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- 
